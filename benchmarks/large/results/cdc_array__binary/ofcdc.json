@@ -1,0 +1,1084 @@
+{
+  "schema": 1,
+  "suite": "large-cdc-v1",
+  "case": "cdc_array/binary",
+  "tool": "ofcdc",
+  "faults": [
+    "ARRAY-BINARY"
+  ],
+  "status": "completed",
+  "seconds": 2.917806130997633,
+  "source_sha256": "18a401722c3f48ff1c4ab36b45d5b76d5b2bdd369c2d6c3adf9df83b503f0f38",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/synthetic/ofcdc.yaml",
+        "time_models": [
+          "ticks"
+        ],
+        "results": [
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_0",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_0/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_0.p_onechange; change together: ptr_a[7:0] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "conv_flag_b",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/conv_flag_b/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_conv_flag_b.p_onechange; change together: ptr_a[103:96] (1 bit), ptr_a[111:104] (1 bit), ptr_a[119:112] (1 bit), ptr_a[127:120] (1 bit), ptr_a[15:8] (1 bit), ptr_a[23:16] (1 bit), ptr_a[31:24] (1 bit), ptr_a[39:32] (1 bit), ptr_a[47:40] (1 bit), ptr_a[55:48] (1 bit), ptr_a[63:56] (1 bit), ptr_a[71:64] (1 bit), ptr_a[79:72] (1 bit), ptr_a[7:0] (1 bit), ptr_a[87:80] (1 bit), ptr_a[95:88] (1 bit)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_10",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_10/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_10.p_onechange; change together: ptr_a[87:80] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_11",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_11/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_11.p_onechange; change together: ptr_a[95:88] (3 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_12",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_12/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_12.p_onechange; change together: ptr_a[103:96] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_13",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_13/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_13.p_onechange; change together: ptr_a[111:104] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_14",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_14/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_14.p_onechange; change together: ptr_a[119:112] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_15",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_15/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_15.p_onechange; change together: ptr_a[127:120] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_1",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_1/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_1.p_onechange; change together: ptr_a[15:8] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_2",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_2/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_2.p_onechange; change together: ptr_a[23:16] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_3",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_3/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_3.p_onechange; change together: ptr_a[31:24] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_4",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_4/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_4.p_onechange; change together: ptr_a[39:32] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_5",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_5/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_5.p_onechange; change together: ptr_a[47:40] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_6",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_6/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_6.p_onechange; change together: ptr_a[55:48] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_7",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 10,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_7/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_7.p_onechange; change together: ptr_a[63:56] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_8",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_8/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_8.p_onechange; change together: ptr_a[71:64] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "glitch_flag_sync1_9",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/glitch_flag_sync1_9/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_flag_sync1_9.p_onechange; change together: ptr_a[79:72] (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_103_96",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_103_96/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_103_96.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_111_104",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_111_104/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_111_104.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_119_112",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_119_112/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_119_112.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_127_120",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_127_120/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_127_120.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_15_8",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_15_8/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_15_8.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_23_16",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_23_16/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_23_16.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_31_24",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_31_24/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_31_24.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_39_32",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_39_32/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_39_32.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_47_40",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_47_40/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_47_40.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_55_48",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 10,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_55_48/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_55_48.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_63_56",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_63_56/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_63_56.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_71_64",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_71_64/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_71_64.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_79_72",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 6,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_79_72/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_79_72.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_7_0",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_7_0/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_7_0.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_87_80",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_87_80/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_87_80.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "binary",
+            "check": "gray_ptr_a_95_88",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/ofcdc/binary/jobs/gray_ptr_a_95_88/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_ptr_a_95_88.p_gray",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[7:0]->flag_sync1[0]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_0"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[87:80]->flag_sync1[10]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_10"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[95:88]->flag_sync1[11]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_11"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[103:96]->flag_sync1[12]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_12"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[111:104]->flag_sync1[13]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_13"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[119:112]->flag_sync1[14]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_14"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[127:120]->flag_sync1[15]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_15"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[15:8]->flag_sync1[1]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_1"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[23:16]->flag_sync1[2]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_2"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[31:24]->flag_sync1[3]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_3"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[39:32]->flag_sync1[4]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_4"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[47:40]->flag_sync1[5]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_5"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[55:48]->flag_sync1[6]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_6"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[63:56]->flag_sync1[7]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_7"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[71:64]->flag_sync1[8]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_8"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[79:72]->flag_sync1[9]",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_flag_sync1_9"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[103:96]->sync1[103:96]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_103_96"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[111:104]->sync1[111:104]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_111_104"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[119:112]->sync1[119:112]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_119_112"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[127:120]->sync1[127:120]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_127_120"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[15:8]->sync1[15:8]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_15_8"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[23:16]->sync1[23:16]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_23_16"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[31:24]->sync1[31:24]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_31_24"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[39:32]->sync1[39:32]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_39_32"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[47:40]->sync1[47:40]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_47_40"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[55:48]->sync1[55:48]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_55_48"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[63:56]->sync1[63:56]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_63_56"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[71:64]->sync1[71:64]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_71_64"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[79:72]->sync1[79:72]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_79_72"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[7:0]->sync1[7:0]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_7_0"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[87:80]->sync1[87:80]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_87_80"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "binary",
+            "crossing": "ptr_a[95:88]->sync1[95:88]",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_ptr_a_95_88"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          }
+        ],
+        "tool_version": "0.0.1",
+        "returncode": 0
+      },
+      "seconds": 2.917806130997633,
+      "status": "completed",
+      "mismatches": 0,
+      "sources": [
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__binary/rtl/cdc_array.sv"
+      ],
+      "run": 1
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "static_cfg/internal_update",
+  "tool": "jasper",
+  "faults": [
+    "STATIC-UPDATE"
+  ],
+  "parameters": {
+    "BAD": 1
+  },
+  "status": "completed",
+  "seconds": 4.88022968900259,
+  "source_sha256": "061106e42773098d6e7f5ebefbb22649914c50eaf75085df68ce44ec5c908db6",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "cfg_cdc_static",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Signal Configuration",
+            "Check": "static_signal",
+            "TAG": "CDC_IN_CONF_STATIC",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "cfg_cdc_static",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "static_cfg",
+            "Module": "static_cfg"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.88022968900259,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/static_cfg__internal_update/run_1/jasper/run.tcl -proj project",
+      "run": 1
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "cfg_cdc_static",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Signal Configuration",
+            "Check": "static_signal",
+            "TAG": "CDC_IN_CONF_STATIC",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "cfg_cdc_static",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "static_cfg",
+            "Module": "static_cfg"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.880017393003072,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/static_cfg__internal_update/run_2/jasper/run.tcl -proj project",
+      "run": 2
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "cfg_cdc_static",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Signal Configuration",
+            "Check": "static_signal",
+            "TAG": "CDC_IN_CONF_STATIC",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "cfg_cdc_static",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "static_cfg",
+            "Module": "static_cfg"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.881514351996884,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/static_cfg__internal_update/run_3/jasper/run.tcl -proj project",
+      "run": 3
+    }
+  ]
+}

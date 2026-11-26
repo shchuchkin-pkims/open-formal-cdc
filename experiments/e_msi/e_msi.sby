@@ -1,0 +1,89 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# E1 + E-MSI: two-domain example in both time models, with and without the metastability model.
+# Expected: gray_* - pass; bin_msi - fail; bin_nomsi - pass; cover - pass.
+
+[tasks]
+clk_gray_msi
+clk_bin_msi
+clk_bin_nomsi
+clk_gray_nomsi
+clk_cover
+tick_gray_msi
+tick_bin_msi
+tick_bin_nomsi
+tick_gray_nomsi
+tick_cover
+
+[options]
+clk_gray_msi: mode prove
+clk_gray_msi: multiclock on
+clk_bin_msi: mode prove
+clk_bin_msi: expect fail
+clk_bin_msi: multiclock on
+clk_bin_nomsi: mode prove
+clk_bin_nomsi: multiclock on
+clk_gray_nomsi: mode prove
+clk_gray_nomsi: multiclock on
+clk_cover: mode cover
+clk_cover: depth 40
+clk_cover: multiclock on
+tick_gray_msi: mode prove
+tick_bin_msi: mode prove
+tick_bin_msi: expect fail
+tick_bin_nomsi: mode prove
+tick_gray_nomsi: mode prove
+tick_cover: mode cover
+tick_cover: depth 40
+
+[engines]
+clk_gray_msi: abc pdr
+clk_bin_msi: abc pdr
+clk_bin_nomsi: abc pdr
+clk_gray_nomsi: abc pdr
+clk_cover: smtbmc
+tick_gray_msi: abc pdr
+tick_bin_msi: abc pdr
+tick_bin_nomsi: abc pdr
+tick_gray_nomsi: abc pdr
+tick_cover: smtbmc
+
+[script]
+clk_gray_msi: read_slang dut_gray.sv --top dut -G BAD=0
+clk_bin_msi: read_slang dut_gray.sv --top dut -G BAD=1
+clk_bin_nomsi: read_slang dut_gray.sv --top dut -G BAD=1
+clk_gray_nomsi: read_slang dut_gray.sv --top dut -G BAD=0
+clk_cover: read_slang dut_gray.sv --top dut -G BAD=0
+tick_gray_msi: read_slang dut_gray.sv --top dut -G BAD=0
+tick_bin_msi: read_slang dut_gray.sv --top dut -G BAD=1
+tick_bin_nomsi: read_slang dut_gray.sv --top dut -G BAD=1
+tick_gray_nomsi: read_slang dut_gray.sv --top dut -G BAD=0
+tick_cover: read_slang dut_gray.sv --top dut -G BAD=0
+script prep.ys
+clk_gray_msi: read_verilog -formal -DMSI ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+clk_bin_msi: read_verilog -formal -DMSI -DBAD ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+clk_bin_nomsi: read_verilog -formal -DBAD ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+clk_gray_nomsi: read_verilog -formal ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+clk_cover: read_verilog -formal -DMSI ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+tick_gray_msi: read_verilog -formal -DTICKS -DMSI ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+tick_bin_msi: read_verilog -formal -DTICKS -DMSI -DBAD ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+tick_bin_nomsi: read_verilog -formal -DTICKS -DBAD ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+tick_gray_nomsi: read_verilog -formal -DTICKS ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+tick_cover: read_verilog -formal -DTICKS -DMSI ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+hierarchy -top ofcdc_wrap
+proc
+flatten
+setundef -anyseq t:$buf
+opt_clean
+tick_gray_msi: formalff -declockgate
+tick_bin_msi: formalff -declockgate
+tick_bin_nomsi: formalff -declockgate
+tick_gray_nomsi: formalff -declockgate
+tick_cover: formalff -declockgate
+opt_clean
+
+[files]
+../common/dut_gray.sv
+../common/ofcdc_msi_d.v
+ofcdc_nooverrun.v
+wrap.v
+prep.ys

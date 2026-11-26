@@ -1,0 +1,1082 @@
+{
+  "schema": 1,
+  "suite": "large-cdc-v1",
+  "case": "cdc_array/base",
+  "tool": "ofcdc",
+  "faults": [],
+  "status": "completed",
+  "seconds": 3.4086059990004287,
+  "source_sha256": "a2a28000c0b868c676a186ee9ccde29f28d6ee30912407ff32c3384deb3cfa77",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/synthetic/ofcdc.yaml",
+        "time_models": [
+          "ticks"
+        ],
+        "results": [
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_0",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "conv_flag_b",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__base/ofcdc/base/jobs/conv_flag_b/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_conv_flag_b.p_onechange; change together: ptr_a[103:96] (1 bit), ptr_a[111:104] (1 bit), ptr_a[119:112] (1 bit), ptr_a[127:120] (1 bit), ptr_a[15:8] (1 bit), ptr_a[23:16] (1 bit), ptr_a[31:24] (1 bit), ptr_a[39:32] (1 bit), ptr_a[47:40] (1 bit), ptr_a[55:48] (1 bit), ptr_a[63:56] (1 bit), ptr_a[71:64] (1 bit), ptr_a[79:72] (1 bit), ptr_a[7:0] (1 bit), ptr_a[87:80] (1 bit), ptr_a[95:88] (1 bit)",
+                "seconds": 1
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_10",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_11",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_12",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_13",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_14",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_15",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_1",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_2",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_3",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_4",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_5",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_6",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_7",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_8",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_flag_sync1_9",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_103_96",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_111_104",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_119_112",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_127_120",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_15_8",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_23_16",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_31_24",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_39_32",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_47_40",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_55_48",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_63_56",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_71_64",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_79_72",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_7_0",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_87_80",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_ptr_a_95_88",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "base",
+            "crossing": "ptr_a[7:0]->flag_sync1[0]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[87:80]->flag_sync1[10]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[95:88]->flag_sync1[11]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[103:96]->flag_sync1[12]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[111:104]->flag_sync1[13]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[119:112]->flag_sync1[14]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[127:120]->flag_sync1[15]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[15:8]->flag_sync1[1]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[23:16]->flag_sync1[2]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[31:24]->flag_sync1[3]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[39:32]->flag_sync1[4]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[47:40]->flag_sync1[5]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[55:48]->flag_sync1[6]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[63:56]->flag_sync1[7]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[71:64]->flag_sync1[8]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[79:72]->flag_sync1[9]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[103:96]->sync1[103:96]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[111:104]->sync1[111:104]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[119:112]->sync1[119:112]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[127:120]->sync1[127:120]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[15:8]->sync1[15:8]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[23:16]->sync1[23:16]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[31:24]->sync1[31:24]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[39:32]->sync1[39:32]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[47:40]->sync1[47:40]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[55:48]->sync1[55:48]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[63:56]->sync1[63:56]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[71:64]->sync1[71:64]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[79:72]->sync1[79:72]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[7:0]->sync1[7:0]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[87:80]->sync1[87:80]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "ptr_a[95:88]->sync1[95:88]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          }
+        ],
+        "tool_version": "0.0.1",
+        "returncode": 0
+      },
+      "seconds": 3.4086059990004287,
+      "status": "completed",
+      "mismatches": 0,
+      "sources": [
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__base/rtl/cdc_array.sv"
+      ],
+      "run": 1
+    }
+  ]
+}

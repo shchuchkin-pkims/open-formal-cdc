@@ -1,0 +1,20 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# E2: does formalff -declockgate recognize gclk & tick
+read_slang ../common/dut_gray.sv --top dut -G BAD=0
+hierarchy -top dut
+proc
+flatten
+cd dut
+rename -output u_tx.ptr ofcdc_s0
+cd ..
+read_verilog -formal ../common/ofcdc_gray.v wrap_tick.v
+hierarchy -top ofcdc_wrap
+proc
+flatten
+opt_clean
+tee -o ../build/before.txt select -list t:$dff t:$adff t:$dffe t:$adffe %x:+[CLK] t:$dff t:$adff t:$dffe t:$adffe %u
+stat
+formalff -declockgate
+opt_clean
+stat
+tee -o ../build/after.txt dump t:$dff t:$adff t:$dffe t:$adffe t:$aldff t:$dffsr

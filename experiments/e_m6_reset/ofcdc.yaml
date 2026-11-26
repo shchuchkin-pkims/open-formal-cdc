@@ -1,0 +1,44 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# M6 reset-release injection on both stages of a reset synchronizer.
+design:
+  top: reset_chain
+  files: [reset_chain.sv]
+
+clocks:
+  - {name: a, port: clk}
+resets:
+  - {port: rst_n, active: low, clock: a}
+
+checks:
+  - name: latency_base
+    template: reset_latency
+    src_reset: rst_n
+    tail_reset: sync_q
+    clock: a
+    max_cycles: 2
+    expect: proven
+  - name: latency_msi_limited
+    template: reset_latency
+    src_reset: rst_n
+    tail_reset: sync_q
+    clock: a
+    max_cycles: 1
+    expect: cex
+    msi_reset:
+      - {cell: "$driver$meta_q", d: rst_n, port: ALOAD, active: low}
+      - {cell: "$driver$sync_q", d: rst_n, port: ALOAD, active: low}
+  - name: latency_msi_allowed
+    template: reset_latency
+    src_reset: rst_n
+    tail_reset: sync_q
+    clock: a
+    max_cycles: 2
+    expect: proven
+    msi_reset:
+      - {cell: "$driver$meta_q", d: rst_n, port: ALOAD, active: low}
+      - {cell: "$driver$sync_q", d: rst_n, port: ALOAD, active: low}
+
+options:
+  structural: false
+  time_models: [ticks, clk2ff]
+  timeout: 60

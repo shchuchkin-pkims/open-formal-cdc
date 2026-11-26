@@ -1,0 +1,352 @@
+{
+  "schema": 1,
+  "name": "directed-cdc-v2",
+  "description": "Known-good and faulty CDC variants with one independent fault per scored issue.",
+  "cases": [
+    {
+      "id": "gray_sync/base",
+      "example": "gray_sync",
+      "variant": "base",
+      "faults": []
+    },
+    {
+      "id": "gray_sync/binary",
+      "example": "gray_sync",
+      "variant": "binary",
+      "faults": [
+        "GRAY-BINARY"
+      ]
+    },
+    {
+      "id": "gray_sync/step2",
+      "example": "gray_sync",
+      "variant": "step2",
+      "faults": [
+        "GRAY-STEP2"
+      ]
+    },
+    {
+      "id": "handshake_mux/base",
+      "example": "handshake_mux",
+      "variant": "base",
+      "faults": []
+    },
+    {
+      "id": "handshake_mux/data_changes",
+      "example": "handshake_mux",
+      "variant": "data_changes",
+      "faults": [
+        "HS-DATA"
+      ]
+    },
+    {
+      "id": "async_fifo/base",
+      "example": "async_fifo",
+      "variant": "base",
+      "faults": []
+    },
+    {
+      "id": "async_fifo/binary",
+      "example": "async_fifo",
+      "variant": "binary",
+      "faults": [
+        "FIFO-BINARY"
+      ]
+    },
+    {
+      "id": "async_fifo/overflow",
+      "example": "async_fifo",
+      "variant": "overflow",
+      "faults": [
+        "FIFO-OVERFLOW"
+      ]
+    },
+    {
+      "id": "async_fifo/read_reset",
+      "example": "async_fifo",
+      "variant": "read_reset",
+      "faults": [
+        "FIFO-RESET"
+      ]
+    },
+    {
+      "id": "pulse_sync/base",
+      "example": "pulse_sync",
+      "variant": "base",
+      "faults": []
+    },
+    {
+      "id": "pulse_sync/short",
+      "example": "pulse_sync",
+      "variant": "short",
+      "faults": [
+        "PULSE-SHORT"
+      ]
+    },
+    {
+      "id": "glitch_conv/base",
+      "example": "glitch_conv",
+      "variant": "base",
+      "faults": []
+    },
+    {
+      "id": "glitch_conv/binary",
+      "example": "glitch_conv",
+      "variant": "binary",
+      "faults": [
+        "GLITCH-COMBO",
+        "CONV-RECONVERGE"
+      ]
+    },
+    {
+      "id": "glitch_conv/paired",
+      "example": "glitch_conv",
+      "variant": "paired",
+      "faults": [
+        "CONV-PAIRED"
+      ]
+    },
+    {
+      "id": "m5_heldout/base",
+      "example": "m5_heldout",
+      "variant": "base",
+      "faults": []
+    },
+    {
+      "id": "m5_heldout/twin",
+      "example": "m5_heldout",
+      "variant": "twin",
+      "faults": [
+        "M5-RECONVERGE-TWIN"
+      ]
+    },
+    {
+      "id": "m5_heldout/triple",
+      "example": "m5_heldout",
+      "variant": "triple",
+      "faults": [
+        "M5-RECONVERGE-TRIPLE"
+      ]
+    },
+    {
+      "id": "static_cfg/base",
+      "example": "static_cfg",
+      "variant": "base",
+      "faults": []
+    },
+    {
+      "id": "static_cfg/internal_update",
+      "example": "static_cfg",
+      "variant": "internal_update",
+      "faults": [
+        "STATIC-UPDATE"
+      ]
+    }
+  ],
+  "faults": {
+    "GRAY-BINARY": {
+      "class": "gray",
+      "description": "A binary counter crosses a multi-bit 2FF synchronizer.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "gray_u_tx_ptr",
+        "status": "cex"
+      },
+      "jasper": {
+        "property": "*bus_gray_coded",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "GRAY-STEP2": {
+      "class": "gray",
+      "description": "A Gray-encoded counter advances by two, changing two bus bits at once.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "gray_u_tx_ptr",
+        "status": "cex"
+      },
+      "jasper": {
+        "property": "*bus_gray_coded",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "HS-DATA": {
+      "class": "handshake",
+      "description": "Source data changes while the destination can capture an active transfer.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "en_u_tx_data__u_rx_data_out",
+        "status": "cex"
+      },
+      "jasper": {
+        "property": "*datapath_stable",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "FIFO-BINARY": {
+      "class": "gray",
+      "description": "Binary FIFO pointers cross into the opposite clock domain.",
+      "ofcdc": {
+        "kind": "check",
+        "name": [
+          "gray_wptr",
+          "gray_rptr"
+        ],
+        "status": "cex",
+        "match": "any"
+      },
+      "jasper": {
+        "property": "*bus_gray_coded",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "FIFO-OVERFLOW": {
+      "class": "fifo",
+      "claim": "functional",
+      "description": "The write side ignores full and can overwrite unread entries.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "fifo",
+        "status": "cex"
+      },
+      "jasper": {
+        "property": "*overflow*",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "FIFO-RESET": {
+      "class": "rdc",
+      "claim": "functional",
+      "description": "Resetting only the read side breaks FIFO ordering and the returned Gray pointer.",
+      "ofcdc": {
+        "kind": "check",
+        "name": [
+          "fifo",
+          "gray_rptr"
+        ],
+        "status": "cex",
+        "match": "any"
+      },
+      "jasper": {
+        "property": "*bus_gray_coded",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "PULSE-SHORT": {
+      "class": "pulse",
+      "description": "The source value is too short to be observed by the destination clock.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "pulse_lvl__u_sync_s1",
+        "status": "cex"
+      },
+      "jasper": {
+        "property": "*data_stable",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "GLITCH-COMBO": {
+      "class": "glitch",
+      "claim": "sufficient_condition",
+      "description": "Two state bits change together before combinational logic. This violates onechange but does not alone prove a function hazard.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "glitch_u_and_s1",
+        "status": "cex"
+      },
+      "jasper": {
+        "property": "CDC_u_and.q_data_stable",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "CONV-RECONVERGE": {
+      "class": "reconvergence",
+      "claim": "sufficient_condition",
+      "description": "Two independently synchronized bits change together before recombination.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "conv_st_b",
+        "status": "cex"
+      },
+      "jasper": {
+        "property": "*one_hot*",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "CONV-PAIRED": {
+      "class": "reconvergence",
+      "claim": "sufficient_condition",
+      "description": "Paired 00<->11 transitions violate onechange at independent synchronizers; the AND cone itself has no function hazard.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "conv_st_b",
+        "status": "cex"
+      },
+      "jasper": {
+        "property": "*one_hot*",
+        "status": [
+          "cex"
+        ]
+      }
+    },
+    "M5-RECONVERGE-TWIN": {
+      "class": "reconvergence",
+      "claim": "functional",
+      "description": "Two independently delayed copies of one source are recombined, producing a vector the source never held.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "m5_conv_joined",
+        "status": "cex"
+      },
+      "jasper": {
+        "violation": "reconvergence_check"
+      }
+    },
+    "M5-RECONVERGE-TRIPLE": {
+      "class": "reconvergence",
+      "claim": "functional",
+      "description": "Three independently delayed copies of one source are recombined, producing a vector the source never held.",
+      "ofcdc": {
+        "kind": "check",
+        "name": "m5_conv_joined",
+        "status": "cex"
+      },
+      "jasper": {
+        "violation": "reconvergence_check"
+      }
+    },
+    "STATIC-UPDATE": {
+      "class": "static",
+      "description": "An internal update changes a configuration register assumed to be static.",
+      "ofcdc": {
+        "kind": "assumption",
+        "name": "cfg_static",
+        "status": "cex"
+      },
+      "jasper": {
+        "property": "*cdc_static",
+        "status": [
+          "cex"
+        ]
+      }
+    }
+  }
+}

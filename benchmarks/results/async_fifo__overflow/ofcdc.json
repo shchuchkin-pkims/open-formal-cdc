@@ -1,0 +1,392 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "async_fifo/overflow",
+  "tool": "ofcdc",
+  "faults": [
+    "FIFO-OVERFLOW"
+  ],
+  "parameters": {
+    "BUG": 2
+  },
+  "status": "completed",
+  "seconds": 0.7131936449986824,
+  "source_sha256": "1f643032299e03a1acf474fbc86670af8359c4f0c9b8ef285193d2819f43a503",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/async_fifo/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "overflow",
+            "check": "fifo",
+            "kind": "check",
+            "template": "fifo",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 9,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/async_fifo__overflow/run_1/ofcdc/overflow/jobs/fifo/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_fifo.p_data",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 18,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/async_fifo__overflow/run_1/ofcdc/overflow/jobs/fifo/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_fifo.p_data",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "overflow",
+            "check": "gray_wptr",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "overflow",
+            "check": "gray_rptr",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "overflow",
+            "crossing": "wptr->u_rsync.s1",
+            "scheme": "ndff_bus",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          },
+          {
+            "variant": "overflow",
+            "crossing": "rptr->u_wsync.s1",
+            "scheme": "ndff_bus",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.7422638979987823,
+      "status": "completed",
+      "run": 1
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/async_fifo/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "overflow",
+            "check": "fifo",
+            "kind": "check",
+            "template": "fifo",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 9,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/async_fifo__overflow/run_2/ofcdc/overflow/jobs/fifo/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_fifo.p_data",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 18,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/async_fifo__overflow/run_2/ofcdc/overflow/jobs/fifo/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_fifo.p_data",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "overflow",
+            "check": "gray_wptr",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "overflow",
+            "check": "gray_rptr",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "overflow",
+            "crossing": "wptr->u_rsync.s1",
+            "scheme": "ndff_bus",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          },
+          {
+            "variant": "overflow",
+            "crossing": "rptr->u_wsync.s1",
+            "scheme": "ndff_bus",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.7084239870018791,
+      "status": "completed",
+      "run": 2
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/async_fifo/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "overflow",
+            "check": "fifo",
+            "kind": "check",
+            "template": "fifo",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 9,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/async_fifo__overflow/run_3/ofcdc/overflow/jobs/fifo/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_fifo.p_data",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 18,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/async_fifo__overflow/run_3/ofcdc/overflow/jobs/fifo/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_fifo.p_data",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "overflow",
+            "check": "gray_wptr",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "overflow",
+            "check": "gray_rptr",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "overflow",
+            "crossing": "wptr->u_rsync.s1",
+            "scheme": "ndff_bus",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          },
+          {
+            "variant": "overflow",
+            "crossing": "rptr->u_wsync.s1",
+            "scheme": "ndff_bus",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.7131936449986824,
+      "status": "completed",
+      "run": 3
+    }
+  ]
+}

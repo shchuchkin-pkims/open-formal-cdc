@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "handshake_mux/data_changes",
+  "tool": "jasper",
+  "faults": [
+    "HS-DATA"
+  ],
+  "parameters": {
+    "BAD": 1
+  },
+  "status": "completed",
+  "seconds": 4.930543586000567,
+  "source_sha256": "8731be39dd301bdc5de1e0f542ac89130ba6bc60f7d33b8bbe381e60337fa5fc",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_u_tx.ack_q_input_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_tx.ack_q_output_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_tx.ack_q_pulse_toggle_circuit",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_tx.ack_q_data_stable",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_input_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_output_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_pulse_toggle_circuit",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_data_stable",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.data_out_datapath_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Functional",
+            "Check": "datapath_stable",
+            "TAG": "CDC_PC_FUNC_DATASTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_rx.data_out",
+            "Scheme Property": "CDC_u_rx.data_out_datapath_stable",
+            "Scheme Type": "MUX_PULSE",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_rx",
+            "Module": "hs_rx"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.92996123100238,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/handshake_mux__data_changes/run_1/jasper/run.tcl -proj project",
+      "run": 1
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_u_tx.ack_q_input_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_tx.ack_q_output_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_tx.ack_q_pulse_toggle_circuit",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_tx.ack_q_data_stable",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_input_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_output_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_pulse_toggle_circuit",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_data_stable",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.data_out_datapath_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Functional",
+            "Check": "datapath_stable",
+            "TAG": "CDC_PC_FUNC_DATASTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_rx.data_out",
+            "Scheme Property": "CDC_u_rx.data_out_datapath_stable",
+            "Scheme Type": "MUX_PULSE",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_rx",
+            "Module": "hs_rx"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.978949426000327,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/handshake_mux__data_changes/run_2/jasper/run.tcl -proj project",
+      "run": 2
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_u_tx.ack_q_input_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_tx.ack_q_output_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_tx.ack_q_pulse_toggle_circuit",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_tx.ack_q_data_stable",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_input_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_output_pulse_single_cycle",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_pulse_toggle_circuit",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.cap_data_stable",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rx.data_out_datapath_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Functional",
+            "Check": "datapath_stable",
+            "TAG": "CDC_PC_FUNC_DATASTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_rx.data_out",
+            "Scheme Property": "CDC_u_rx.data_out_datapath_stable",
+            "Scheme Type": "MUX_PULSE",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_rx",
+            "Module": "hs_rx"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.930543586000567,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/handshake_mux__data_changes/run_3/jasper/run.tcl -proj project",
+      "run": 3
+    }
+  ]
+}

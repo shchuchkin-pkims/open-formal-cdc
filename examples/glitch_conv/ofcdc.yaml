@@ -1,0 +1,34 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Example: logic in front of a synchronizer (T-GLITCH) and convergence of
+# synchronizers (T-CONV); both are proposed by the structural analysis. A convergence
+# counterexample is advisory: the crossing becomes 'unresolved' (review), not 'unsafe'.
+design:
+  top: glitch_conv
+  files: [glitch_conv.sv]
+  params: {BIN: 0}
+
+clocks:
+  - {name: a, port: clk_a}
+  - {name: b, port: clk_b}
+resets:
+  - {port: rst_a_n, active: low, clock: a}
+  - {port: rst_b_n, active: low, clock: b}
+inputs:
+  - {port: step, clock: a}
+
+options:
+  time_models: [ticks, clk2ff]
+  hazard_checks: true         # M4 function-hazard check in addition to onechange
+
+variants:
+  base:
+    expect: {glitch_u_and_s1: proven, hazard_u_and_s1: cex, conv_st_b: proven, "st->u_and.s1": unsafe,
+             "st->u_s0.s1": safe, "st->u_s1.s1": safe}
+  binary:
+    params: {BIN: 1}
+    expect: {glitch_u_and_s1: cex, hazard_u_and_s1: cex, conv_st_b: cex, "st->u_and.s1": unsafe,
+             "st->u_s0.s1": unresolved, "st->u_s1.s1": unresolved}
+  paired:
+    params: {BIN: 2}
+    expect: {glitch_u_and_s1: cex, hazard_u_and_s1: proven, conv_st_b: cex, "st->u_and.s1": safe,
+             "st->u_s0.s1": unresolved, "st->u_s1.s1": unresolved}

@@ -1,0 +1,291 @@
+{
+  "schema": 1,
+  "suite": "large-cdc-v1",
+  "cases": [
+    {
+      "case": "cdc_array/small",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 1.0555168989994854,
+          "fault_score": "n/a",
+          "metrics": {
+            "checks": {
+              "proven": 8,
+              "cex": 1
+            },
+            "crossing_verdicts": {
+              "unresolved": 8
+            }
+          },
+          "job_parallel": null
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.974199746000522,
+          "fault_score": "n/a",
+          "metrics": {
+            "properties": {
+              "cex": 4
+            },
+            "violations": {
+              "cdc_pair_logic": 1,
+              "data_stable": 2,
+              "bus_gray_coded": 2
+            }
+          },
+          "job_parallel": null
+        }
+      }
+    },
+    {
+      "case": "cdc_array/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 3.4086059990004287,
+          "fault_score": "n/a",
+          "metrics": {
+            "checks": {
+              "proven": 32,
+              "cex": 1
+            },
+            "crossing_verdicts": {
+              "unresolved": 32
+            }
+          },
+          "job_parallel": null
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 5.025049623000086,
+          "fault_score": "n/a",
+          "metrics": {
+            "properties": {
+              "cex": 4
+            },
+            "violations": {
+              "cdc_pair_logic": 1,
+              "data_stable": 2,
+              "bus_gray_coded": 2
+            }
+          },
+          "job_parallel": null
+        }
+      }
+    },
+    {
+      "case": "cdc_array/large",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 13.985336521000136,
+          "fault_score": "n/a",
+          "metrics": {
+            "checks": {
+              "proven": 128,
+              "cex": 1
+            },
+            "crossing_verdicts": {
+              "unresolved": 128
+            }
+          },
+          "job_parallel": null
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 5.375922102000914,
+          "fault_score": "n/a",
+          "metrics": {
+            "properties": {
+              "cex": 4
+            },
+            "violations": {
+              "cdc_pair_logic": 1,
+              "data_stable": 2,
+              "bus_gray_coded": 2
+            }
+          },
+          "job_parallel": null
+        }
+      }
+    },
+    {
+      "case": "cdc_array/binary",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 2.917806130997633,
+          "fault_score": "1/1",
+          "metrics": {
+            "checks": {
+              "cex": 33
+            },
+            "crossing_verdicts": {
+              "unsafe": 32
+            }
+          },
+          "job_parallel": null
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.927627694996772,
+          "fault_score": "0/1 (base also cex)",
+          "metrics": {
+            "properties": {
+              "cex": 4
+            },
+            "violations": {
+              "cdc_pair_logic": 1,
+              "data_stable": 2,
+              "bus_gray_coded": 2
+            }
+          },
+          "job_parallel": null
+        }
+      }
+    },
+    {
+      "case": "cdc_array/missing_stage",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 1.8543322080004145,
+          "fault_score": "1/1",
+          "metrics": {
+            "checks": {
+              "proven": 16,
+              "cex": 1
+            },
+            "crossing_verdicts": {
+              "no_scheme": 16,
+              "unresolved": 16
+            }
+          },
+          "job_parallel": null
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 8.483836717001395,
+          "fault_score": "0/1",
+          "metrics": {
+            "properties": {
+              "proven": 2,
+              "cex": 2
+            },
+            "violations": {
+              "cdc_pair_fanout": 1,
+              "cdc_pair_logic": 1,
+              "data_stable": 1,
+              "bus_gray_coded": 1
+            }
+          },
+          "job_parallel": null
+        }
+      }
+    },
+    {
+      "case": "riscv_dmi/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 42.85616141100036,
+          "fault_score": "n/a",
+          "metrics": {
+            "checks": {
+              "proven": 5
+            },
+            "crossing_verdicts": {
+              "no_scheme": 32,
+              "safe": 5,
+              "structural": 12
+            }
+          },
+          "job_parallel": null
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 244.90319133299636,
+          "fault_score": "n/a",
+          "metrics": {
+            "properties": {
+              "unprocessed": 44,
+              "undetermined": 43,
+              "cex": 11,
+              "proven": 10
+            },
+            "violations": {
+              "convergence_check": 45,
+              "unclocked_signal": 2,
+              "cdc_pair_fanout": 4,
+              "cdc_pair_logic": 34,
+              "no_scheme": 34,
+              "sync_chain_logic": 4,
+              "sync_chain_fanout": 3,
+              "glitch_check": 3
+            }
+          },
+          "job_parallel": null
+        }
+      }
+    },
+    {
+      "case": "axi_spi/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 151.65880494599696,
+          "fault_score": "n/a",
+          "metrics": {
+            "checks": {
+              "cex": 18
+            },
+            "crossing_verdicts": {
+              "no_scheme": 11,
+              "unsafe": 23,
+              "unresolved": 2
+            }
+          },
+          "job_parallel": 4
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 125.0193231519952,
+          "fault_score": "n/a",
+          "metrics": {
+            "properties": {
+              "unprocessed": 20,
+              "undetermined": 8,
+              "cex": 3
+            },
+            "violations": {
+              "cdc_pair_fanout": 2,
+              "cdc_pair_logic": 2,
+              "no_scheme": 2,
+              "sync_chain_logic": 1,
+              "sync_chain_fanout": 1,
+              "glitch_check": 3,
+              "reconvergence_check": 2,
+              "convergence_check": 13,
+              "bus_gray_coded": 2,
+              "data_stable": 1
+            }
+          },
+          "job_parallel": null
+        }
+      }
+    }
+  ],
+  "totals": {
+    "ofcdc": {
+      "seconds": 217.73656411499542,
+      "runs": 7,
+      "errors": 0
+    },
+    "jasper": {
+      "seconds": 398.70915036799124,
+      "runs": 7,
+      "errors": 0
+    }
+  }
+}

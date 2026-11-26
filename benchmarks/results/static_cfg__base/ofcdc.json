@@ -1,0 +1,213 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "static_cfg/base",
+  "tool": "ofcdc",
+  "faults": [],
+  "parameters": {
+    "BAD": 0
+  },
+  "status": "completed",
+  "seconds": 0.3140251709992299,
+  "source_sha256": "25d250a3c3a6ad3cd2068e83bc4fa5827c7b9133cfe3572d9b4d73df1216ecf2",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/static_cfg/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "base",
+            "check": "cfg_static",
+            "kind": "assumption",
+            "template": "env_static",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [
+              "no_write"
+            ],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "base",
+            "crossing": "cfg_to_b",
+            "scheme": "static",
+            "verdict": "safe_assuming",
+            "reasons": [
+              "environment assumption no_write"
+            ],
+            "relies_on": [
+              "cfg_static",
+              "no_write"
+            ],
+            "expect": "safe_assuming",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.31092382299902965,
+      "status": "completed",
+      "run": 1
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/static_cfg/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "base",
+            "check": "cfg_static",
+            "kind": "assumption",
+            "template": "env_static",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [
+              "no_write"
+            ],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "base",
+            "crossing": "cfg_to_b",
+            "scheme": "static",
+            "verdict": "safe_assuming",
+            "reasons": [
+              "environment assumption no_write"
+            ],
+            "relies_on": [
+              "cfg_static",
+              "no_write"
+            ],
+            "expect": "safe_assuming",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.33517189800113556,
+      "status": "completed",
+      "run": 2
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/static_cfg/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "base",
+            "check": "cfg_static",
+            "kind": "assumption",
+            "template": "env_static",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [
+              "no_write"
+            ],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "base",
+            "crossing": "cfg_to_b",
+            "scheme": "static",
+            "verdict": "safe_assuming",
+            "reasons": [
+              "environment assumption no_write"
+            ],
+            "relies_on": [
+              "cfg_static",
+              "no_write"
+            ],
+            "expect": "safe_assuming",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.3140251709992299,
+      "status": "completed",
+      "run": 3
+    }
+  ]
+}

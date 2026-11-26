@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "static_cfg/base",
+  "tool": "jasper",
+  "faults": [],
+  "parameters": {
+    "BAD": 0
+  },
+  "status": "completed",
+  "seconds": 4.579742859001271,
+  "source_sha256": "25d250a3c3a6ad3cd2068e83bc4fa5827c7b9133cfe3572d9b4d73df1216ecf2",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "cfg_cdc_static",
+            "status": "proven"
+          }
+        ],
+        "violations": [],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.579742859001271,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/static_cfg__base/run_1/jasper/run.tcl -proj project",
+      "run": 1
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "cfg_cdc_static",
+            "status": "proven"
+          }
+        ],
+        "violations": [],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.58023400899765,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/static_cfg__base/run_2/jasper/run.tcl -proj project",
+      "run": 2
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "cfg_cdc_static",
+            "status": "proven"
+          }
+        ],
+        "violations": [],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.579591546000302,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/static_cfg__base/run_3/jasper/run.tcl -proj project",
+      "run": 3
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "handshake_mux/data_changes",
+  "tool": "ofcdc",
+  "faults": [
+    "HS-DATA"
+  ],
+  "parameters": {
+    "BAD": 1
+  },
+  "status": "completed",
+  "seconds": 0.5275132919996395,
+  "source_sha256": "8731be39dd301bdc5de1e0f542ac89130ba6bc60f7d33b8bbe381e60337fa5fc",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/handshake_mux/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "data_changes",
+            "check": "hs_u_tx_req",
+            "kind": "check",
+            "template": "hs_req",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "data_changes",
+            "check": "en_u_tx_data__u_rx_data_out",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/handshake_mux__data_changes/run_1/ofcdc/data_changes/jobs/en_u_tx_data__u_rx_data_out/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_tx_data__u_rx_data_out.p_stable",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 9,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/handshake_mux__data_changes/run_1/ofcdc/data_changes/jobs/en_u_tx_data__u_rx_data_out/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_tx_data__u_rx_data_out.p_stable",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "data_changes",
+            "crossing": "u_rx.ack->u_ack_sync.s1",
+            "scheme": "ndff",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          },
+          {
+            "variant": "data_changes",
+            "crossing": "u_tx.req->u_req_sync.s1",
+            "scheme": "ndff",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          },
+          {
+            "variant": "data_changes",
+            "crossing": "u_tx.data->u_rx.data_out",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_tx_data__u_rx_data_out"
+            ],
+            "relies_on": [],
+            "expect": "unsafe",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.5241245810029795,
+      "status": "completed",
+      "run": 1
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/handshake_mux/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "data_changes",
+            "check": "hs_u_tx_req",
+            "kind": "check",
+            "template": "hs_req",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "data_changes",
+            "check": "en_u_tx_data__u_rx_data_out",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/handshake_mux__data_changes/run_2/ofcdc/data_changes/jobs/en_u_tx_data__u_rx_data_out/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_tx_data__u_rx_data_out.p_stable",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 9,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/handshake_mux__data_changes/run_2/ofcdc/data_changes/jobs/en_u_tx_data__u_rx_data_out/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_tx_data__u_rx_data_out.p_stable",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "data_changes",
+            "crossing": "u_rx.ack->u_ack_sync.s1",
+            "scheme": "ndff",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          },
+          {
+            "variant": "data_changes",
+            "crossing": "u_tx.req->u_req_sync.s1",
+            "scheme": "ndff",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          },
+          {
+            "variant": "data_changes",
+            "crossing": "u_tx.data->u_rx.data_out",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_tx_data__u_rx_data_out"
+            ],
+            "relies_on": [],
+            "expect": "unsafe",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.5307447010018222,
+      "status": "completed",
+      "run": 2
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/handshake_mux/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "data_changes",
+            "check": "hs_u_tx_req",
+            "kind": "check",
+            "template": "hs_req",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "data_changes",
+            "check": "en_u_tx_data__u_rx_data_out",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/handshake_mux__data_changes/run_3/ofcdc/data_changes/jobs/en_u_tx_data__u_rx_data_out/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_tx_data__u_rx_data_out.p_stable",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 9,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/handshake_mux__data_changes/run_3/ofcdc/data_changes/jobs/en_u_tx_data__u_rx_data_out/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_tx_data__u_rx_data_out.p_stable",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "data_changes",
+            "crossing": "u_rx.ack->u_ack_sync.s1",
+            "scheme": "ndff",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          },
+          {
+            "variant": "data_changes",
+            "crossing": "u_tx.req->u_req_sync.s1",
+            "scheme": "ndff",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": "safe",
+            "ok": true
+          },
+          {
+            "variant": "data_changes",
+            "crossing": "u_tx.data->u_rx.data_out",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_tx_data__u_rx_data_out"
+            ],
+            "relies_on": [],
+            "expect": "unsafe",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.5275132919996395,
+      "status": "completed",
+      "run": 3
+    }
+  ]
+}

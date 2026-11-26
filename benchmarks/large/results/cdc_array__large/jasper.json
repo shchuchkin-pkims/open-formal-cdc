@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "suite": "large-cdc-v1",
+  "case": "cdc_array/large",
+  "tool": "jasper",
+  "faults": [],
+  "status": "completed",
+  "seconds": 5.375922102000914,
+  "source_sha256": "5fa7724a6b1d0907298822d597275ece9d962cb7ef3432c04d82601f84a2bc14",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_data_b_bus_gray_coded",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_data_b_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_flag_b_bus_gray_coded",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_flag_b_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_logic",
+            "TAG": "CDC_ST_SYNC_PAIRLOGIC",
+            "Severity": "Error",
+            "Rule Value": "Buf",
+            "Design Value": "Logic",
+            "# Pairs": "1",
+            "Reset Sources": "ptr_a[1:0] ptr_a[9:8] ptr_a[17:16] ptr_a[25:24] ptr_a[33:32] ptr_a[41:40] ptr_a[49:48] ptr_a[57:56] ptr_a[65:64] ptr_a[73:72] ptr_a[81:80] ptr_a[89:88] ptr_a[97:96] ptr_a[105:104] ptr_a[113:112] ptr_a[121:120] ptr_a[129:128] ptr_a[137:136] ptr_a[145:144] ptr_a[153:152] ptr_a[161:160] ptr_a[169:168] ptr_a[177:176] ptr_a[185:184] ptr_a[193:192] ptr_a[201:200] ptr_a[209:208] ptr_a[217:216] ptr_a[225:224] ptr_a[233:232] ptr_a[241:240] ptr_a[249:248] ptr_a[257:256] ptr_a[265:264] ptr_a[273:272] ptr_a[281:280] ptr_a[289:288] ptr_a[297:296] ptr_a[305:304] ptr_a[313:312] ptr_a[321:320] ptr_a[329:328] ptr_a[337:336] ptr_a[345:344] ptr_a[353:352] ptr_a[361:360] ptr_a[369:368] ptr_a[377:376] ptr_a[385:384] ptr_a[393:392] ptr_a[401:400] ptr_a[409:408] ptr_a[417:416] ptr_a[425:424] ptr_a[433:432] ptr_a[441:440] ptr_a[449:448] ptr_a[457:456] ptr_a[465:464] ptr_a[473:472] ptr_a[481:480] ptr_a[489:488] ptr_a[497:496] ptr_a[505:504]",
+            "Source Unit": "ptr_a[1:0] ptr_a[9:8] ptr_a[17:16] ptr_a[25:24] ptr_a[33:32] ptr_a[41:40] ptr_a[49:48] ptr_a[57:56] ptr_a[65:64] ptr_a[73:72] ptr_a[81:80] ptr_a[89:88] ptr_a[97:96] ptr_a[105:104] ptr_a[113:112] ptr_a[121:120] ptr_a[129:128] ptr_a[137:136] ptr_a[145:144] ptr_a[153:152] ptr_a[161:160] ptr_a[169:168] ptr_a[177:176] ptr_a[185:184] ptr_a[193:192] ptr_a[201:200] ptr_a[209:208] ptr_a[217:216] ptr_a[225:224] ptr_a[233:232] ptr_a[241:240] ptr_a[249:248] ptr_a[257:256] ptr_a[265:264] ptr_a[273:272] ptr_a[281:280] ptr_a[289:288] ptr_a[297:296] ptr_a[305:304] ptr_a[313:312] ptr_a[321:320] ptr_a[329:328] ptr_a[337:336] ptr_a[345:344] ptr_a[353:352] ptr_a[361:360] ptr_a[369:368] ptr_a[377:376] ptr_a[385:384] ptr_a[393:392] ptr_a[401:400] ptr_a[409:408] ptr_a[417:416] ptr_a[425:424] ptr_a[433:432] ptr_a[441:440] ptr_a[449:448] ptr_a[457:456] ptr_a[465:464] ptr_a[473:472] ptr_a[481:480] ptr_a[489:488] ptr_a[497:496] ptr_a[505:504]",
+            "Destination Unit": "flag_sync1",
+            "Occurrence": "flag_sync1",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_clk_a",
+            "Destination Domain": "jg_clk_b",
+            "Source Clock": "clk_a",
+            "Destination Clock": "clk_b",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "data_b",
+            "Scheme Property": "CDC_data_b_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "flag_b",
+            "Scheme Property": "CDC_flag_b_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "bus_gray_coded",
+            "TAG": "CDC_PC_FUNC_BUSGRAY",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "data_b",
+            "Scheme Property": "CDC_data_b_bus_gray_coded",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "bus_gray_coded",
+            "TAG": "CDC_PC_FUNC_BUSGRAY",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "flag_b",
+            "Scheme Property": "CDC_flag_b_bus_gray_coded",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 5.375922102000914,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/cdc_array__large/jasper/run.tcl -proj project",
+      "sources": [
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/cdc_array__large/rtl/cdc_array.sv"
+      ],
+      "run": 1
+    }
+  ]
+}

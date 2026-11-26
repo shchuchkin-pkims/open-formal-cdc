@@ -1,0 +1,36 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# AXI SPI slave with two token-ring dual-clock FIFOs between SPI and SoC domains.
+design:
+  top: axi_spi_slave
+  filelist: rtl.f
+
+clocks:
+  - {name: axi, port: axi_aclk, period: 10}
+  - {name: spi, port: spi_sclk, period: 25}
+resets:
+  - {port: axi_aresetn, active: low, clock: axi}
+inputs:
+  - {port: test_mode, clock: axi}
+  - {port: spi_cs, clock: spi}
+  - {port: spi_sdi0, clock: spi}
+  - {port: spi_sdi1, clock: spi}
+  - {port: spi_sdi2, clock: spi}
+  - {port: spi_sdi3, clock: spi}
+  - {port: axi_master_aw_ready, clock: axi}
+  - {port: axi_master_ar_ready, clock: axi}
+  - {port: axi_master_w_ready, clock: axi}
+  - {port: axi_master_r_valid, clock: axi}
+  - {port: axi_master_r_data, clock: axi}
+  - {port: axi_master_r_resp, clock: axi}
+  - {port: axi_master_r_last, clock: axi}
+  - {port: axi_master_r_id, clock: axi}
+  - {port: axi_master_r_user, clock: axi}
+  - {port: axi_master_b_valid, clock: axi}
+  - {port: axi_master_b_resp, clock: axi}
+  - {port: axi_master_b_id, clock: axi}
+  - {port: axi_master_b_user, clock: axi}
+
+options:
+  time_models: [clk2ff]  # derived SPI clock through the TX clock mux
+  timeout: 120
+  prove_engine: aiger rIC3

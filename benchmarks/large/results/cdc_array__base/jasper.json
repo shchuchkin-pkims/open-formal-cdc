@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "suite": "large-cdc-v1",
+  "case": "cdc_array/base",
+  "tool": "jasper",
+  "faults": [],
+  "status": "completed",
+  "seconds": 5.025049623000086,
+  "source_sha256": "a2a28000c0b868c676a186ee9ccde29f28d6ee30912407ff32c3384deb3cfa77",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_data_b_bus_gray_coded",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_data_b_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_flag_b_bus_gray_coded",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_flag_b_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_logic",
+            "TAG": "CDC_ST_SYNC_PAIRLOGIC",
+            "Severity": "Error",
+            "Rule Value": "Buf",
+            "Design Value": "Logic",
+            "# Pairs": "1",
+            "Reset Sources": "ptr_a[1:0] ptr_a[9:8] ptr_a[17:16] ptr_a[25:24] ptr_a[33:32] ptr_a[41:40] ptr_a[49:48] ptr_a[57:56] ptr_a[65:64] ptr_a[73:72] ptr_a[81:80] ptr_a[89:88] ptr_a[97:96] ptr_a[105:104] ptr_a[113:112] ptr_a[121:120]",
+            "Source Unit": "ptr_a[1:0] ptr_a[9:8] ptr_a[17:16] ptr_a[25:24] ptr_a[33:32] ptr_a[41:40] ptr_a[49:48] ptr_a[57:56] ptr_a[65:64] ptr_a[73:72] ptr_a[81:80] ptr_a[89:88] ptr_a[97:96] ptr_a[105:104] ptr_a[113:112] ptr_a[121:120]",
+            "Destination Unit": "flag_sync1",
+            "Occurrence": "flag_sync1",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_clk_a",
+            "Destination Domain": "jg_clk_b",
+            "Source Clock": "clk_a",
+            "Destination Clock": "clk_b",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "data_b",
+            "Scheme Property": "CDC_data_b_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "flag_b",
+            "Scheme Property": "CDC_flag_b_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "bus_gray_coded",
+            "TAG": "CDC_PC_FUNC_BUSGRAY",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "data_b",
+            "Scheme Property": "CDC_data_b_bus_gray_coded",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "bus_gray_coded",
+            "TAG": "CDC_PC_FUNC_BUSGRAY",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "flag_b",
+            "Scheme Property": "CDC_flag_b_bus_gray_coded",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "cdc_array",
+            "Module": "cdc_array"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 5.025049623000086,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/cdc_array__base/jasper/run.tcl -proj project",
+      "sources": [
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/cdc_array__base/rtl/cdc_array.sv"
+      ],
+      "run": 1
+    }
+  ]
+}

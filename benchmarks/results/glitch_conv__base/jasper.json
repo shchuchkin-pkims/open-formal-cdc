@@ -1,0 +1,255 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "glitch_conv/base",
+  "tool": "jasper",
+  "faults": [],
+  "parameters": {
+    "BIN": 0
+  },
+  "status": "completed",
+  "seconds": 4.927964988997701,
+  "source_sha256": "55076e105dad7fd9a2a2d01ab15eab94ded98a8b7e3ef5f62716d943c11d010d",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_u_and.q_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_s0.q_data_stable",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_s1.q_data_stable",
+            "status": "proven"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_logic",
+            "TAG": "CDC_ST_SYNC_PAIRLOGIC",
+            "Severity": "Error",
+            "Rule Value": "Buf",
+            "Design Value": "Logic",
+            "# Pairs": "1",
+            "Reset Sources": "st",
+            "Source Unit": "st",
+            "Destination Unit": "u_and.s1",
+            "Occurrence": "u_and.s1",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_clk_a",
+            "Destination Domain": "jg_clk_b",
+            "Source Clock": "clk_a",
+            "Destination Clock": "clk_b",
+            "Instance": "u_and",
+            "Module": "sync2"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_and.q",
+            "Scheme Property": "CDC_u_and.q_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_and",
+            "Module": "sync2"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.878706881001563,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/glitch_conv__base/run_1/jasper/run.tcl -proj project",
+      "run": 1
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_u_and.q_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_s0.q_data_stable",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_s1.q_data_stable",
+            "status": "proven"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_logic",
+            "TAG": "CDC_ST_SYNC_PAIRLOGIC",
+            "Severity": "Error",
+            "Rule Value": "Buf",
+            "Design Value": "Logic",
+            "# Pairs": "1",
+            "Reset Sources": "st",
+            "Source Unit": "st",
+            "Destination Unit": "u_and.s1",
+            "Occurrence": "u_and.s1",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_clk_a",
+            "Destination Domain": "jg_clk_b",
+            "Source Clock": "clk_a",
+            "Destination Clock": "clk_b",
+            "Instance": "u_and",
+            "Module": "sync2"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_and.q",
+            "Scheme Property": "CDC_u_and.q_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_and",
+            "Module": "sync2"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.927964988997701,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/glitch_conv__base/run_2/jasper/run.tcl -proj project",
+      "run": 2
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_u_and.q_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_s0.q_data_stable",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_s1.q_data_stable",
+            "status": "proven"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_logic",
+            "TAG": "CDC_ST_SYNC_PAIRLOGIC",
+            "Severity": "Error",
+            "Rule Value": "Buf",
+            "Design Value": "Logic",
+            "# Pairs": "1",
+            "Reset Sources": "st",
+            "Source Unit": "st",
+            "Destination Unit": "u_and.s1",
+            "Occurrence": "u_and.s1",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_clk_a",
+            "Destination Domain": "jg_clk_b",
+            "Source Clock": "clk_a",
+            "Destination Clock": "clk_b",
+            "Instance": "u_and",
+            "Module": "sync2"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_and.q",
+            "Scheme Property": "CDC_u_and.q_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_and",
+            "Module": "sync2"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.931263456001034,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/glitch_conv__base/run_3/jasper/run.tcl -proj project",
+      "run": 3
+    }
+  ]
+}

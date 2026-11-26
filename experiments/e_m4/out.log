@@ -1,0 +1,157 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.71+50 (git sha1 583f380c6, Release, Clang /usr/bin/clang++ 21.1.8)
+
+-- Running command `script probe.ys' --
+
+-- Executing script file `probe.ys' --
+
+1. Executing SLANG frontend.
+Top level design units:
+    glitch_conv
+
+
+Build succeeded: 0 errors, 0 warnings
+
+1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `glitch_conv.$27'.
+Removing empty process `glitch_conv.$20'.
+Removing empty process `glitch_conv.$13'.
+Removing empty process `glitch_conv.$5'.
+Found and cleaned up 1 empty switch in `\glitch_conv.$0'.
+Cleaned up 1 empty switch.
+<suppressed ~25 debug messages>
+
+1.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+1.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+1.4. Executing PROC_INIT pass (extract init attributes).
+
+1.5. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+1.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\glitch_conv.$0'.
+     1/1: $st$4
+
+1.7. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\glitch_conv.$0'.
+Removing empty process `glitch_conv.$0'.
+Cleaned up 1 empty switch.
+
+1.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glitch_conv.
+<suppressed ~5 debug messages>
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \glitch_conv
+
+2.2. Analyzing design hierarchy..
+Top module:  \glitch_conv
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glitch_conv.
+
+4. Executing FLATTEN pass (flatten design).
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glitch_conv..
+Removed 5 unused cells and 13 unused wires.
+<suppressed ~18 debug messages>
+glitch_conv/$10
+glitch_conv/u_and.d
+glitch_conv/st
+
+6. Executing SUBMOD pass (moving cells to submodules as requested).
+
+6.1. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glitch_conv..
+
+6.2. Continuing SUBMOD pass.
+Creating submodule ofcdc_cone (\ofcdc_cone) of module \glitch_conv.
+  signal \st: input \st
+  signal \u_and.d: output \u_and.d
+  cell $10 ($and)
+
+2 modules:
+  glitch_conv
+  ofcdc_cone
+
+autoidx 3
+metadata
+  twines
+    root 1062 "st"
+    root 1065 "u_and.d"
+    root 1099 "$10"
+    root 1135 "ofcdc_cone"
+  end
+end
+
+module $pub@1135  # \ofcdc_cone
+
+  attribute \hdlname "st"
+  attribute \src "glitch_conv.sv:21.15"
+  wire width 2 input 1 $pub@1062  # \st
+
+  attribute \hdlname "u_and d"
+  attribute \src "glitch_conv.sv:8.39"
+  wire output 2 $pub@1065  # \u_and.d
+
+  attribute \src "glitch_conv.sv:29.49-29.62"
+  cell $and $priv@1099  # $10
+    parameter \A_WIDTH 1
+    parameter \B_WIDTH 1
+    parameter \A_SIGNED 0
+    parameter \B_SIGNED 0
+    parameter \Y_WIDTH 1
+    connect \A $pub@1062 [0]  # \A \st [0]
+    connect \B $pub@1062 [1]  # \B \st [1]
+    connect \Y $pub@1065  # \Y \u_and.d
+  end
+end
+
+End of script. Logfile hash: ac3126fd0e, time: 0.00s, user: 0.01s, system: 0.00s, MEM: 20.47 MB peak
+Yosys 0.71+50 (git sha1 583f380c6, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 67% 2x read_slang (0 sec), 8% 1x script (0 sec), ...

@@ -1,0 +1,31 @@
+# RDC capture guard with shared, independent, and correctly delayed resets.
+design:
+  top: rdc_capture
+  files: [rdc_capture.sv]
+  params: {MODE: 0}
+
+clocks:
+  - {name: a, port: clk_a}
+  - {name: b, port: clk_b}
+resets:
+  - {port: rst_a_n, active: low, clock: a}
+  - {port: rst_b_n, active: low, clock: b}
+inputs:
+  - {port: valid_in, clock: b}
+
+options:
+  structural: true
+  rdc_checks: true
+  time_models: [ticks, clk2ff]
+
+variants:
+  shared:
+    expect: {rdc_src_data__dst_data: proven}
+  independent:
+    params: {MODE: 1}
+    resets: {rst_a_n: {mode: free}}
+    expect: {rdc_src_data__dst_data: cex}
+  delayed:
+    params: {MODE: 2}
+    resets: {rst_a_n: {mode: free}}
+    expect: {rdc_src_data__dst_data: proven}

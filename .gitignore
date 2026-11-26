@@ -1,0 +1,29 @@
+# Syncthing
+.stfolder/
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+venv/
+.venv/
+# Build and SBY results
+build/
+# Local Claude Code settings
+.claude/
+
+# Local agent instructions, working notes and reference material
+/CLAUDE.md
+/на-чем-прервалось.md
+/refs/
+
+# Syncthing temporary files
+.syncthing.*
+*.tmp
+
+# External regression suites (fetched at pinned commits)
+tests/external/cache/
+benchmarks/cache/
+
+# Local reference designs (paths to other projects)
+designs/

@@ -1,0 +1,741 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "async_fifo/base",
+  "tool": "jasper",
+  "faults": [],
+  "parameters": {
+    "BUG": 0
+  },
+  "status": "completed",
+  "seconds": 5.630534904001252,
+  "source_sha256": "04f76f9805f02fabc0e6f04414dcf1250b745ad7e602b46e65704caa7f41b480",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_p_one_hot_7",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_8",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_9",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_10",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_11",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_12",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_13",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_14",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_15",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_16",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_1",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_2",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_3",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_4",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_wsync.q_bus_gray_coded",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_wsync.q_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_rsync.q_bus_gray_coded",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rsync.q_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Config",
+            "Check": "unclocked_signal",
+            "TAG": "CDC_IN_CONF_UNCLK",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "rdata",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_fanout",
+            "TAG": "CDC_ST_SYNC_PAIRFANOUT",
+            "Severity": "Warning",
+            "Rule Value": "False",
+            "Design Value": "",
+            "# Pairs": "1",
+            "Reset Sources": "rbin[1:0]",
+            "Source Unit": "rbin[1:0]",
+            "Destination Unit": "rdata",
+            "Occurrence": "rbin[1:0]",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_rclk",
+            "Destination Domain": "unclocked",
+            "Source Clock": "rclk",
+            "Destination Clock": ":jg_cdc_unclocked",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Pair",
+            "Check": "no_scheme",
+            "TAG": "CDC_ST_SYNC_NOSYNC",
+            "Severity": "Fatal",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "5",
+            "Reset Sources": "rbin[1:0] mem[2] mem[1] mem[0] mem[3]",
+            "Source Unit": "rbin[1:0] mem[2] mem[1] mem[0] mem[3]",
+            "Destination Unit": "rdata",
+            "Occurrence": "rdata",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_rclk jg_wclk",
+            "Destination Domain": "unclocked",
+            "Source Clock": "rclk wclk",
+            "Destination Clock": ":jg_cdc_unclocked",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Convergence",
+            "Check": "glitch_check",
+            "TAG": "CDC_ST_CONV_GLITCH",
+            "Severity": "Error",
+            "Rule Value": "diff_src_domain diff_src_signal",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "rdata",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_rsync.q",
+            "Scheme Property": "CDC_u_rsync.q_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_rsync",
+            "Module": "afifo_sync:(W=3)"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_wsync.q",
+            "Scheme Property": "CDC_u_wsync.q_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_wsync",
+            "Module": "afifo_sync:(W=3)"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 5.63185784000234,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/async_fifo__base/run_1/jasper/run.tcl -proj project",
+      "run": 1
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_p_one_hot_7",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_8",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_9",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_10",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_11",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_12",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_13",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_14",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_15",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_16",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_1",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_2",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_3",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_4",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_wsync.q_bus_gray_coded",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_wsync.q_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_rsync.q_bus_gray_coded",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rsync.q_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Config",
+            "Check": "unclocked_signal",
+            "TAG": "CDC_IN_CONF_UNCLK",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "rdata",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_fanout",
+            "TAG": "CDC_ST_SYNC_PAIRFANOUT",
+            "Severity": "Warning",
+            "Rule Value": "False",
+            "Design Value": "",
+            "# Pairs": "1",
+            "Reset Sources": "rbin[1:0]",
+            "Source Unit": "rbin[1:0]",
+            "Destination Unit": "rdata",
+            "Occurrence": "rbin[1:0]",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_rclk",
+            "Destination Domain": "unclocked",
+            "Source Clock": "rclk",
+            "Destination Clock": ":jg_cdc_unclocked",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Pair",
+            "Check": "no_scheme",
+            "TAG": "CDC_ST_SYNC_NOSYNC",
+            "Severity": "Fatal",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "5",
+            "Reset Sources": "rbin[1:0] mem[2] mem[1] mem[0] mem[3]",
+            "Source Unit": "rbin[1:0] mem[2] mem[1] mem[0] mem[3]",
+            "Destination Unit": "rdata",
+            "Occurrence": "rdata",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_rclk jg_wclk",
+            "Destination Domain": "unclocked",
+            "Source Clock": "rclk wclk",
+            "Destination Clock": ":jg_cdc_unclocked",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Convergence",
+            "Check": "glitch_check",
+            "TAG": "CDC_ST_CONV_GLITCH",
+            "Severity": "Error",
+            "Rule Value": "diff_src_domain diff_src_signal",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "rdata",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_rsync.q",
+            "Scheme Property": "CDC_u_rsync.q_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_rsync",
+            "Module": "afifo_sync:(W=3)"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_wsync.q",
+            "Scheme Property": "CDC_u_wsync.q_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_wsync",
+            "Module": "afifo_sync:(W=3)"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 5.630534904001252,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/async_fifo__base/run_2/jasper/run.tcl -proj project",
+      "run": 2
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_p_one_hot_7",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_8",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_9",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_10",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_11",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_12",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_13",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_14",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_15",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_one_hot_16",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_1",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_2",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_3",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_p_datapath_meta_safe_5_4",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_wsync.q_bus_gray_coded",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_wsync.q_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_rsync.q_bus_gray_coded",
+            "status": "proven"
+          },
+          {
+            "name": "CDC_u_rsync.q_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Config",
+            "Check": "unclocked_signal",
+            "TAG": "CDC_IN_CONF_UNCLK",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "rdata",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_fanout",
+            "TAG": "CDC_ST_SYNC_PAIRFANOUT",
+            "Severity": "Warning",
+            "Rule Value": "False",
+            "Design Value": "",
+            "# Pairs": "1",
+            "Reset Sources": "rbin[1:0]",
+            "Source Unit": "rbin[1:0]",
+            "Destination Unit": "rdata",
+            "Occurrence": "rbin[1:0]",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_rclk",
+            "Destination Domain": "unclocked",
+            "Source Clock": "rclk",
+            "Destination Clock": ":jg_cdc_unclocked",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Pair",
+            "Check": "no_scheme",
+            "TAG": "CDC_ST_SYNC_NOSYNC",
+            "Severity": "Fatal",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "5",
+            "Reset Sources": "rbin[1:0] mem[2] mem[1] mem[0] mem[3]",
+            "Source Unit": "rbin[1:0] mem[2] mem[1] mem[0] mem[3]",
+            "Destination Unit": "rdata",
+            "Occurrence": "rdata",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_rclk jg_wclk",
+            "Destination Domain": "unclocked",
+            "Source Clock": "rclk wclk",
+            "Destination Clock": ":jg_cdc_unclocked",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Convergence",
+            "Check": "glitch_check",
+            "TAG": "CDC_ST_CONV_GLITCH",
+            "Severity": "Error",
+            "Rule Value": "diff_src_domain diff_src_signal",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "rdata",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "async_fifo",
+            "Module": "async_fifo"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_rsync.q",
+            "Scheme Property": "CDC_u_rsync.q_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_rsync",
+            "Module": "afifo_sync:(W=3)"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_wsync.q",
+            "Scheme Property": "CDC_u_wsync.q_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_wsync",
+            "Module": "afifo_sync:(W=3)"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 5.581019031000324,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/async_fifo__base/run_3/jasper/run.tcl -proj project",
+      "run": 3
+    }
+  ]
+}

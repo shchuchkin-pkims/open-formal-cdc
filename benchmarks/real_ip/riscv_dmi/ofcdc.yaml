@@ -1,0 +1,26 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# RISC-V JTAG DTM with a dual-clock DMI bridge and clear/reset sequencing.
+design:
+  top: dmi_jtag
+  filelist: rtl.f
+
+clocks:
+  - {name: sys, port: clk_i, period: 10}
+  - {name: jtag, port: tck_i, period: 25}
+resets:
+  - {port: rst_ni, active: low, clock: sys}
+  - {port: trst_ni, active: low, clock: jtag}
+inputs:
+  - {port: testmode_i, clock: sys}
+  - {port: dmi_req_ready_i, clock: sys}
+  - {port: dmi_resp_i, clock: sys}
+  - {port: dmi_resp_valid_i, clock: sys}
+  - {port: tms_i, clock: jtag}
+  - {port: td_i, clock: jtag}
+
+options:
+  time_models: [ticks]
+  timeout: 120
+  cover_depth: 100
+  prove_engine: aiger rIC3
+  cover_engine: smtbmc boolector

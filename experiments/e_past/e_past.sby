@@ -1,0 +1,25 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# E-PAST: $past, $stable and assert property via read_slang.
+# Expected (if supported): past, stable, prop - pass; prop_bad - fail.
+[tasks]
+past
+stable
+prop
+prop_bad
+
+[options]
+mode prove
+prop_bad: expect fail
+
+[engines]
+abc pdr
+
+[script]
+past: read_slang -DT_PAST past.sv --top p
+stable: read_slang -DT_STABLE past.sv --top p
+prop: read_slang -DT_PROP past.sv --top p
+prop_bad: read_slang -DT_PROP_BAD past.sv --top p
+prep -top p
+
+[files]
+past.sv

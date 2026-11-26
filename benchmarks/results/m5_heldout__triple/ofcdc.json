@@ -1,0 +1,627 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "m5_heldout/triple",
+  "tool": "ofcdc",
+  "faults": [
+    "M5-RECONVERGE-TRIPLE"
+  ],
+  "parameters": {
+    "CHAINS": 3,
+    "RECONV": 1
+  },
+  "status": "completed",
+  "seconds": 1.2065919189990382,
+  "source_sha256": "9e96ccf2df119b17e01069ce57a7a940352391262f8131d8048db71b4bc112a7",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/examples/m5_heldout/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "triple",
+            "check": "m5_a2",
+            "kind": "check",
+            "template": "settled",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "conv_joined",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "m5_conv_joined",
+            "kind": "check",
+            "template": "nonew",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/build/m5_heldout__triple/run_1/ofcdc/triple/jobs/m5_conv_joined/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_m5_conv_joined.p_nonew",
+                "seconds": 1
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/build/m5_heldout__triple/run_1/ofcdc/triple/jobs/m5_conv_joined/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_m5_conv_joined.p_nonew",
+                "seconds": 1
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "m5_b2",
+            "kind": "check",
+            "template": "settled",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "m5_c2",
+            "kind": "check",
+            "template": "settled",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "triple",
+            "crossing": "src_q->a1",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in m5_conv_joined"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "triple",
+            "crossing": "src_q->b1",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in m5_conv_joined"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "triple",
+            "crossing": "src_q->c1",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in m5_conv_joined"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          }
+        ],
+        "cells": {},
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 1.2180663850012934,
+      "status": "completed",
+      "run": 1
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/examples/m5_heldout/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "triple",
+            "check": "m5_a2",
+            "kind": "check",
+            "template": "settled",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "conv_joined",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "m5_conv_joined",
+            "kind": "check",
+            "template": "nonew",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/build/m5_heldout__triple/run_2/ofcdc/triple/jobs/m5_conv_joined/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_m5_conv_joined.p_nonew",
+                "seconds": 1
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/build/m5_heldout__triple/run_2/ofcdc/triple/jobs/m5_conv_joined/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_m5_conv_joined.p_nonew",
+                "seconds": 1
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "m5_b2",
+            "kind": "check",
+            "template": "settled",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "m5_c2",
+            "kind": "check",
+            "template": "settled",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "triple",
+            "crossing": "src_q->a1",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in m5_conv_joined"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "triple",
+            "crossing": "src_q->b1",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in m5_conv_joined"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "triple",
+            "crossing": "src_q->c1",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in m5_conv_joined"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          }
+        ],
+        "cells": {},
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 1.2065919189990382,
+      "status": "completed",
+      "run": 2
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/examples/m5_heldout/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "triple",
+            "check": "m5_a2",
+            "kind": "check",
+            "template": "settled",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "conv_joined",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "m5_conv_joined",
+            "kind": "check",
+            "template": "nonew",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/build/m5_heldout__triple/run_3/ofcdc/triple/jobs/m5_conv_joined/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_m5_conv_joined.p_nonew",
+                "seconds": 1
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/build/m5_heldout__triple/run_3/ofcdc/triple/jobs/m5_conv_joined/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_m5_conv_joined.p_nonew",
+                "seconds": 1
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "m5_b2",
+            "kind": "check",
+            "template": "settled",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "triple",
+            "check": "m5_c2",
+            "kind": "check",
+            "template": "settled",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "baseline_of": null,
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "triple",
+            "crossing": "src_q->a1",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in m5_conv_joined"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "triple",
+            "crossing": "src_q->b1",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in m5_conv_joined"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "triple",
+            "crossing": "src_q->c1",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in m5_conv_joined"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          }
+        ],
+        "cells": {},
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 1.2012191219982924,
+      "status": "completed",
+      "run": 3
+    }
+  ]
+}

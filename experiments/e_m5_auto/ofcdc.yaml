@@ -1,0 +1,35 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Automatic settled checks with M5 on direct and logic-between-stages chains.
+design:
+  top: auto_m5
+  files: [auto_m5.sv]
+  params: {LOGIC: 0, ENABLED: 0, INLINE: 0}
+
+clocks:
+  - {name: a, port: clk_a}
+  - {name: b, port: clk_b}
+resets:
+  - {port: rst_a_n, active: low, clock: a}
+  - {port: rst_b_n, active: low, clock: b}
+inputs:
+  - {port: set_a, clock: a}
+  - {port: pass_b, clock: b}
+  - {port: en_b, clock: b}
+
+options:
+  structural: true
+  m5_checks: true
+  time_models: [ticks, clk2ff]
+  timeout: 60
+
+variants:
+  base:
+    expect: {m5_sync_q: proven}
+  logic:
+    params: {LOGIC: 1}
+    expect: {m5_sync_q: proven}
+  inline:
+    params: {INLINE: 1}
+    expect: {m5_sync_q: proven}
+  enabled:
+    params: {ENABLED: 1}

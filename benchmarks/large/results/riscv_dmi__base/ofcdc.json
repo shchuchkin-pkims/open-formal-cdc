@@ -1,0 +1,726 @@
+{
+  "schema": 1,
+  "suite": "large-cdc-v1",
+  "case": "riscv_dmi/base",
+  "tool": "ofcdc",
+  "faults": [],
+  "status": "completed",
+  "seconds": 42.85616141100036,
+  "source_sha256": "5f5dd7466fe61350fec5b3d92f4af42195bb620ee2e80f2d773dd7be169cf6b5",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/real_ip/riscv_dmi/ofcdc.yaml",
+        "time_models": [
+          "ticks"
+        ],
+        "results": [
+          {
+            "variant": "base",
+            "check": "en_i_dmi_cdc_i_cdc_resp_async_data_1_0__dmi_resp_1_0",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 40
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_i_dmi_cdc_i_cdc_resp_async_data_33_2__dmi_resp_33_2",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 44
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_i_dmi_cdc_i_cdc_req_async_data_31_0__dmi_req_o_31_0",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 41
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_i_dmi_cdc_i_cdc_req_async_data_33_32__dmi_req_o_33_32",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 43
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_i_dmi_cdc_i_cdc_req_async_data_40_34__dmi_req_o_40_34",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 40
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->data_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.async_data[1:0]->dmi_resp[1:0]",
+            "scheme": "mux_enable",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.async_data[33:2]->dmi_resp[33:2]",
+            "scheme": "mux_enable",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->dr_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->error_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.async_data[31:0]",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.async_data[33:32]",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.async_data[40:34]",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.ack_dst_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.req_src_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.state_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.ack_dst_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.receiver_phase_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_dst.ack_dst_q->i_dmi_cdc.i_cdc_req.i_src.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.s_src_clear_ack_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.s_src_isolate_ack_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.ack_dst_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.req_src_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.state_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.ack_dst_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.receiver_phase_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_src.req_src_q->i_dmi_cdc.i_cdc_resp.i_dst.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.s_dst_clear_ack_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.s_dst_isolate_ack_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->state_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->state_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.async_data[31:0]->dmi_req_o[31:0]",
+            "scheme": "mux_enable",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.async_data[33:32]->dmi_req_o[33:32]",
+            "scheme": "mux_enable",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.async_data[40:34]->dmi_req_o[40:34]",
+            "scheme": "mux_enable",
+            "verdict": "safe",
+            "reasons": [],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.core_clear_pending_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.core_dmi_rst_nq",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.ack_dst_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.req_src_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.state_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.ack_dst_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.receiver_phase_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_src.req_src_q->i_dmi_cdc.i_cdc_req.i_dst.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.s_dst_clear_ack_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_req.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_req.s_dst_isolate_ack_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.async_data[1:0]",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.async_data[33:2]",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.ack_dst_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.req_src_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_dst.state_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_dst.ack_dst_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.i_state_transition_cdc_src.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_a.receiver_phase_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_dst.ack_dst_q->i_dmi_cdc.i_cdc_resp.i_src.i_sync.reg_q",
+            "scheme": "user_cell",
+            "verdict": "structural",
+            "reasons": [
+              "scheme user_cell accepted by structure"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.s_src_clear_ack_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "i_dmi_cdc.i_cdc_resp.i_cdc_reset_ctrlr.i_cdc_reset_ctrlr_half_b.i_state_transition_cdc_src.data_src_q->i_dmi_cdc.i_cdc_resp.s_src_isolate_ack_q",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          }
+        ],
+        "tool_version": "0.0.1",
+        "returncode": 0
+      },
+      "seconds": 42.85616141100036,
+      "status": "completed",
+      "mismatches": 0,
+      "sources": [
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/tech_cells_generic/src/rtl/tc_sync.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/tech_cells_generic/src/rtl/tc_clk.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/common_cells/src/sync.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/common_cells/src/cdc_reset_ctrlr_pkg.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/common_cells/src/cdc_4phase.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/common_cells/src/cdc_reset_ctrlr.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/common_cells/src/cdc_2phase_clearable.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/riscv-dbg/src/dm_pkg.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/riscv-dbg/src/dmi_cdc.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/riscv-dbg/src/dmi_jtag_tap.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/riscv-dbg/src/dmi_jtag.sv"
+      ],
+      "run": 1
+    }
+  ]
+}

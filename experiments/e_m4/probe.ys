@@ -1,0 +1,13 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+read_slang glitch_conv.sv --top glitch_conv -G BIN=1
+hierarchy -top glitch_conv
+proc
+flatten
+opt_clean
+cd glitch_conv
+select -list w:u_and.d %ci*:-$aldff,$dff,$adff,$dffe,$adffe,$aldffe,$sdff,$dlatch[Q]
+select -set cone w:u_and.d %ci*:-$aldff,$dff,$adff,$dffe,$adffe,$aldffe,$sdff,$dlatch[Q] c:* %i
+submod -copy -name ofcdc_cone @cone
+cd ..
+ls
+dump ofcdc_cone

@@ -1,0 +1,43 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# E1/E2: the same T-GRAY in the tick model (no multiclock).
+# Expected: good - pass, bad - fail, cover - pass (as in e3 with clk2fflogic).
+[tasks]
+good
+bad
+cover
+
+[options]
+good: mode prove
+bad: mode prove
+bad: expect fail
+cover: mode cover
+cover: depth 20
+
+[engines]
+good: abc pdr
+bad: abc pdr
+cover: smtbmc
+
+[script]
+good: read_slang dut_gray.sv --top dut -G BAD=0
+bad: read_slang dut_gray.sv --top dut -G BAD=1
+cover: read_slang dut_gray.sv --top dut -G BAD=0
+hierarchy -top dut
+proc
+flatten
+cd dut
+rename -output u_tx.ptr ofcdc_s0
+cd ..
+read_verilog -formal -DICG ofcdc_gray.v wrap_tick.v
+hierarchy -top ofcdc_wrap
+proc
+flatten
+setundef -anyseq t:$buf
+opt_clean
+formalff -declockgate
+opt_clean
+
+[files]
+../common/dut_gray.sv
+../common/ofcdc_gray.v
+wrap_tick.v

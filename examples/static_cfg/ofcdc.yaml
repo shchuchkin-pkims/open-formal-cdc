@@ -1,0 +1,42 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Example: static configuration crossing (T-ENV assumption and its twin check).
+design:
+  top: static_cfg
+  files: [static_cfg.sv]
+  params: {BAD: 0}
+
+clocks:
+  - {name: a, port: clk_a}
+  - {name: b, port: clk_b}
+resets:
+  - {port: rst_a_n, active: low, clock: a}
+  - {port: rst_b_n, active: low, clock: b}
+inputs:
+  - {port: wr, clock: a}
+  - {port: wdata, clock: a}
+
+assumptions:
+  - name: no_write            # environment: software does not write during operation
+    kind: constant
+    signal: wr
+    value: 0
+  - name: cfg_static          # design net: verified by a twin job
+    kind: static
+    signal: cfg
+    expect: proven
+
+crossings:
+  - name: cfg_to_b
+    from: {signal: cfg, clock: a}
+    to: {signal: q_b, clock: b}
+    scheme: static
+    assumptions: [cfg_static]
+    expect: safe_assuming     # relies on the environment assumption no_write
+
+options:
+  time_models: [ticks, clk2ff]
+
+variants:
+  internal_update:
+    params: {BAD: 1}
+    expect: {cfg_static: cex, cfg_to_b: unresolved}

@@ -1,0 +1,63 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# M5 propagation on the second stage after an M2a injection on the first stage.
+design:
+  top: sync_chain
+  files: [sync_chain.sv]
+
+clocks:
+  - {name: a, port: clk_a}
+  - {name: b, port: clk_b}
+resets:
+  - {port: rst_a_n, active: low, clock: a}
+  - {port: rst_b_n, active: low, clock: b}
+inputs:
+  - {port: set_a, clock: a}
+
+checks:
+  - &plain
+    name: latency_plain
+    template: rise_latency
+    src: src_q
+    dst: sync_q
+    clock: b
+    max_cycles: 1
+    expect: proven
+  - <<: *plain
+    name: latency_m2_limited
+    expect: cex
+    msi:
+      - {cell: $driver$meta_q, d: src_q, width: 1}
+  - <<: *plain
+    name: latency_m2_allowed
+    max_cycles: 2
+    msi:
+      - {cell: $driver$meta_q, d: src_q, width: 1}
+  - <<: *plain
+    name: latency_m5_limited
+    max_cycles: 2
+    expect: cex
+    m5:
+      - {first_cell: $driver$meta_q, first_d: src_q,
+         second_cell: $driver$sync_q, second_d: meta_q, width: 1}
+  - <<: *plain
+    name: latency_m5_allowed
+    max_cycles: 3
+    m5:
+      - {first_cell: $driver$meta_q, first_d: src_q,
+         second_cell: $driver$sync_q, second_d: meta_q, width: 1}
+
+  - name: settled_m5_limited
+    template: settled
+    data: meta_q
+    dst: sync_q
+    clock: b
+    stable_edges: 1
+    expect: cex
+    m5:
+      - {first_cell: $driver$meta_q, first_d: src_q,
+         second_cell: $driver$sync_q, second_d: meta_q, width: 1}
+
+options:
+  structural: false
+  time_models: [ticks, clk2ff]
+  timeout: 60

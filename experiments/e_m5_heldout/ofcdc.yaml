@@ -1,0 +1,32 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Shared-source fanout and M5 reconvergence: twin and triple chains.
+design:
+  top: shared_reconvergence
+  files: [../../examples/m5_heldout/shared_reconvergence.sv]
+  params: {CHAINS: 2, RECONV: 1}
+
+clocks:
+  - {name: a, port: clk_a}
+  - {name: b, port: clk_b}
+resets:
+  - {port: rst_a_n, active: low, clock: a}
+  - {port: rst_b_n, active: low, clock: b}
+inputs:
+  - {port: d, clock: a}
+
+options:
+  structural: true
+  m5_checks: true
+  time_models: [ticks, clk2ff]
+  timeout: 60
+  cover_depth: 80
+
+variants:
+  base:
+    params: {RECONV: 0}
+    expect: {m5_a2: proven, m5_b2: proven}
+  twin:
+    expect: {m5_a2: proven, m5_b2: proven, m5_conv_joined: cex}
+  triple:
+    params: {CHAINS: 3}
+    expect: {m5_a2: proven, m5_b2: proven, m5_c2: proven, m5_conv_joined: cex}

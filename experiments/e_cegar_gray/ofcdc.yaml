@@ -1,0 +1,32 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# State abstraction of aux_q creates a spurious Gray violation in good.
+design:
+  top: cegar_gray
+  files: [cegar_gray.sv]
+  params: {BAD: 0}
+
+clocks:
+  - {name: a, port: clk}
+resets:
+  - {port: rst_n, active: low, clock: a}
+inputs:
+  - {port: inc, clock: a}
+
+checks:
+  - name: gray_ptr
+    template: gray
+    signal: ptr_q
+    clock: a
+    cut: [aux_q]
+    cut_mode: state
+
+options:
+  structural: false
+  time_models: [ticks, clk2ff]
+  timeout: 60
+
+variants:
+  good:
+    params: {BAD: 0}
+  bad:
+    params: {BAD: 1}

@@ -1,0 +1,854 @@
+{
+  "schema": 1,
+  "suite": "large-cdc-v1",
+  "case": "axi_spi/base",
+  "tool": "ofcdc",
+  "faults": [],
+  "status": "completed",
+  "seconds": 151.65880494599696,
+  "source_sha256": "bee9e3a71b7965e6e4e66ed47c4f4a4b4f8642573073fd141cdd0a95289028b5",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/real_ip/axi_spi/ofcdc.yaml",
+        "time_models": [
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "base",
+            "check": "en_u_dcfifo_rx_u_din_buffer_data_127_96__u_axiplug_curr_data_rx",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 235,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_dcfifo_rx_u_din_buffer_data_127_96__u_axiplug_curr_data_rx/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_dcfifo_rx_u_din_buffer_data_127_96__u_axiplug_curr_data_rx.p_stable",
+                "seconds": 70
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_u_dcfifo_rx_u_din_buffer_data_159_128__u_axiplug_curr_data_rx",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 75,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_dcfifo_rx_u_din_buffer_data_159_128__u_axiplug_curr_data_rx/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_dcfifo_rx_u_din_buffer_data_159_128__u_axiplug_curr_data_rx.p_stable",
+                "seconds": 142
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_u_dcfifo_rx_u_din_buffer_data_191_160__u_axiplug_curr_data_rx",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 91,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_dcfifo_rx_u_din_buffer_data_191_160__u_axiplug_curr_data_rx/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_dcfifo_rx_u_din_buffer_data_191_160__u_axiplug_curr_data_rx.p_stable",
+                "seconds": 142
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_u_dcfifo_rx_u_din_buffer_data_223_192__u_axiplug_curr_data_rx",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 108,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_dcfifo_rx_u_din_buffer_data_223_192__u_axiplug_curr_data_rx/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_dcfifo_rx_u_din_buffer_data_223_192__u_axiplug_curr_data_rx.p_stable",
+                "seconds": 119
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_u_dcfifo_rx_u_din_buffer_data_255_224__u_axiplug_curr_data_rx",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 117,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_dcfifo_rx_u_din_buffer_data_255_224__u_axiplug_curr_data_rx/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_dcfifo_rx_u_din_buffer_data_255_224__u_axiplug_curr_data_rx.p_stable",
+                "seconds": 68
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_u_dcfifo_rx_u_din_buffer_data_31_0__u_axiplug_curr_data_rx",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 126,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_dcfifo_rx_u_din_buffer_data_31_0__u_axiplug_curr_data_rx/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_dcfifo_rx_u_din_buffer_data_31_0__u_axiplug_curr_data_rx.p_stable",
+                "seconds": 55
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_u_dcfifo_rx_u_din_buffer_data_63_32__u_axiplug_curr_data_rx",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 162,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_dcfifo_rx_u_din_buffer_data_63_32__u_axiplug_curr_data_rx/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_dcfifo_rx_u_din_buffer_data_63_32__u_axiplug_curr_data_rx.p_stable",
+                "seconds": 40
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_u_dcfifo_rx_u_din_buffer_data_95_64__u_axiplug_curr_data_rx",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 179,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_dcfifo_rx_u_din_buffer_data_95_64__u_axiplug_curr_data_rx/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_dcfifo_rx_u_din_buffer_data_95_64__u_axiplug_curr_data_rx.p_stable",
+                "seconds": 44
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_u_slave_sm_u_spiregs_reg2__u_axiplug_tx_counter",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 38,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_slave_sm_u_spiregs_reg2__u_axiplug_tx_counter/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_slave_sm_u_spiregs_reg2__u_axiplug_tx_counter.p_stable",
+                "seconds": 8
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "en_u_slave_sm_u_spiregs_reg3__u_axiplug_tx_counter",
+            "kind": "check",
+            "template": "en_stable",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 49,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/en_u_slave_sm_u_spiregs_reg3__u_axiplug_tx_counter/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_en_u_slave_sm_u_spiregs_reg3__u_axiplug_tx_counter.p_stable",
+                "seconds": 11
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_u_dcfifo_rx_u_din_write_tr_state",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/gray_u_dcfifo_rx_u_din_write_tr_state/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_u_dcfifo_rx_u_din_write_tr_state.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "conv_u_axiplug_curr_addr",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/conv_u_axiplug_curr_addr/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_conv_u_axiplug_curr_addr.p_onechange; change together: ofcdc_in_spi_cs (1 bit), u_slave_sm.ctrl_addr_valid (1 bit)",
+                "seconds": 2
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_u_dcfifo_tx_u_din_full_full_synch_d_middle",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 21,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/glitch_u_dcfifo_tx_u_din_full_full_synch_d_middle/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_u_dcfifo_tx_u_din_full_full_synch_d_middle.p_onechange; change together: u_dcfifo_tx.u_dout.read_tr.state (2 bits)",
+                "seconds": 2
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "conv_u_axiplug_AR_CS",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/conv_u_axiplug_AR_CS/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_conv_u_axiplug_AR_CS.p_onechange; change together: ofcdc_in_spi_cs (1 bit), u_slave_sm.u_spiregs.reg0 (5 bits)",
+                "seconds": 2
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_u_syncro_rdwr_reg",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/glitch_u_syncro_rdwr_reg/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_u_syncro_rdwr_reg.p_onechange; change together: u_rxreg.data_int (8 bits), u_rxreg.running (1 bit), u_slave_sm.cmd_reg (2 bits), u_slave_sm.state (2 bits)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "conv_u_syncro_rdwr_reg",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/conv_u_syncro_rdwr_reg/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_conv_u_syncro_rdwr_reg.p_onechange; change together: ofcdc_in_spi_sdi2 (1 bit), ofcdc_in_spi_sdi3 (1 bit)",
+                "seconds": 1
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "glitch_u_dcfifo_rx_u_din_full_full_synch_d_middle",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 12,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/glitch_u_dcfifo_rx_u_din_full_full_synch_d_middle/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_glitch_u_dcfifo_rx_u_din_full_full_synch_d_middle.p_onechange; change together: u_dcfifo_rx.u_dout.read_tr.state (2 bits)",
+                "seconds": 5
+              }
+            ]
+          },
+          {
+            "variant": "base",
+            "check": "gray_u_dcfifo_tx_u_din_write_tr_state",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 15,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/large/build/axi_spi__base/ofcdc/base/jobs/gray_u_dcfifo_tx_u_din_write_tr_state/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_u_dcfifo_tx_u_din_write_tr_state.p_gray",
+                "seconds": 2
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "base",
+            "crossing": "u_slave_sm.addr_reg->u_axiplug.curr_addr",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_slave_sm.u_spiregs.reg2->u_axiplug.curr_addr",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_slave_sm.u_spiregs.reg3->u_axiplug.curr_addr",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_din.buffer.data[127:96]->u_axiplug.curr_data_rx",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_dcfifo_rx_u_din_buffer_data_127_96__u_axiplug_curr_data_rx"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_din.buffer.data[159:128]->u_axiplug.curr_data_rx",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_dcfifo_rx_u_din_buffer_data_159_128__u_axiplug_curr_data_rx"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_din.buffer.data[191:160]->u_axiplug.curr_data_rx",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_dcfifo_rx_u_din_buffer_data_191_160__u_axiplug_curr_data_rx"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_din.buffer.data[223:192]->u_axiplug.curr_data_rx",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_dcfifo_rx_u_din_buffer_data_223_192__u_axiplug_curr_data_rx"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_din.buffer.data[255:224]->u_axiplug.curr_data_rx",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_dcfifo_rx_u_din_buffer_data_255_224__u_axiplug_curr_data_rx"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_din.buffer.data[31:0]->u_axiplug.curr_data_rx",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_dcfifo_rx_u_din_buffer_data_31_0__u_axiplug_curr_data_rx"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_din.buffer.data[63:32]->u_axiplug.curr_data_rx",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_dcfifo_rx_u_din_buffer_data_63_32__u_axiplug_curr_data_rx"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_din.buffer.data[95:64]->u_axiplug.curr_data_rx",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_dcfifo_rx_u_din_buffer_data_95_64__u_axiplug_curr_data_rx"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_slave_sm.u_spiregs.reg2->u_axiplug.tx_counter",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_slave_sm_u_spiregs_reg2__u_axiplug_tx_counter"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_slave_sm.u_spiregs.reg3->u_axiplug.tx_counter",
+            "scheme": "mux_enable",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in en_u_slave_sm_u_spiregs_reg3__u_axiplug_tx_counter"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_din.write_tr.state->u_dcfifo_rx.u_dout.empty_synch.d_middle",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_u_dcfifo_rx_u_din_write_tr_state"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_dout.read_tr.state->u_dcfifo_tx.u_din.full.full_synch.d_middle",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_dcfifo_tx_u_din_full_full_synch_d_middle"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "spi_cs->u_syncro.cs_reg",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_u_axiplug_AR_CS); review",
+              "convergence: the sources may change in one step (conv_u_axiplug_curr_addr); review",
+              "convergence: the sources may change in one step (conv_u_axiplug_AR_CS); review",
+              "convergence: the sources may change in one step (conv_u_axiplug_curr_addr); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "spi_sdi0->u_syncro.rdwr_reg",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_syncro_rdwr_reg"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "spi_sdi1->u_syncro.rdwr_reg",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_syncro_rdwr_reg"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "spi_sdi2->u_syncro.rdwr_reg",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_syncro_rdwr_reg"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "spi_sdi3->u_syncro.rdwr_reg",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_syncro_rdwr_reg"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_rxreg.data_int->u_syncro.rdwr_reg",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_syncro_rdwr_reg"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_rxreg.running->u_syncro.rdwr_reg",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_syncro_rdwr_reg"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_slave_sm.cmd_reg->u_syncro.rdwr_reg",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_syncro_rdwr_reg"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_slave_sm.state->u_syncro.rdwr_reg",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_syncro_rdwr_reg"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_slave_sm.u_spiregs.reg0->u_syncro.rdwr_reg",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_syncro_rdwr_reg"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_slave_sm.ctrl_addr_valid->u_syncro.valid_reg",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_u_axiplug_AR_CS); review",
+              "convergence: the sources may change in one step (conv_u_axiplug_curr_addr); review",
+              "convergence: the sources may change in one step (conv_u_axiplug_AR_CS); review",
+              "convergence: the sources may change in one step (conv_u_axiplug_curr_addr); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_rx.u_dout.read_tr.state->u_dcfifo_rx.u_din.full.full_synch.d_middle",
+            "scheme": "ndff",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in glitch_u_dcfifo_rx_u_din_full_full_synch_d_middle"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_din.write_tr.state->u_dcfifo_tx.u_dout.empty_synch.d_middle",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_u_dcfifo_tx_u_din_write_tr_state"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_din.buffer.data[127:96]->u_slave_sm.tx_data",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_din.buffer.data[159:128]->u_slave_sm.tx_data",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_din.buffer.data[191:160]->u_slave_sm.tx_data",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_din.buffer.data[223:192]->u_slave_sm.tx_data",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_din.buffer.data[255:224]->u_slave_sm.tx_data",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_din.buffer.data[31:0]->u_slave_sm.tx_data",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_din.buffer.data[63:32]->u_slave_sm.tx_data",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "base",
+            "crossing": "u_dcfifo_tx.u_din.buffer.data[95:64]->u_slave_sm.tx_data",
+            "scheme": "none",
+            "verdict": "no_scheme",
+            "reasons": [
+              "no synchronization scheme"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          }
+        ],
+        "tool_version": "0.0.1",
+        "returncode": 0
+      },
+      "seconds": 151.65880494599696,
+      "status": "completed",
+      "mismatches": 0,
+      "sources": [
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/tech_cells_generic/src/rtl/tc_clk.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/tech_cells_generic/src/deprecated/pulp_clk_cells.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/common_cells/src/onehot_to_bin.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_slice_dc/src/dc_data_buffer.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_slice_dc/src/dc_synchronizer.v",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_slice_dc/src/dc_full_detector.v",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_slice_dc/src/dc_token_ring.v",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_slice_dc/src/dc_token_ring_fifo_din.v",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_slice_dc/src/dc_token_ring_fifo_dout.v",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_spi_slave/spi_slave_axi_plug.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_spi_slave/spi_slave_cmd_parser.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_spi_slave/spi_slave_controller.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_spi_slave/spi_slave_dc_fifo.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_spi_slave/spi_slave_regs.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_spi_slave/spi_slave_rx.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_spi_slave/spi_slave_syncro.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_spi_slave/spi_slave_tx.sv",
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/cache/axi_spi_slave/axi_spi_slave.sv"
+      ],
+      "run": 1
+    }
+  ],
+  "job_parallel": 4
+}

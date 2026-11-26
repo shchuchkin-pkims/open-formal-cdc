@@ -1,0 +1,34 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Independent M5 checks for two receivers of one first stage.
+design:
+  top: fanout_m5
+  files: [fanout_m5.sv]
+  params: {LOGIC: 0}
+
+clocks:
+  - {name: a, port: clk_a}
+  - {name: b, port: clk_b}
+resets:
+  - {port: rst_a_n, active: low, clock: a}
+  - {port: rst_b_n, active: low, clock: b}
+inputs:
+  - {port: set_a, clock: a}
+  - {port: pass_b, clock: b}
+
+options:
+  structural: true
+  m5_checks: true
+  time_models: [ticks, clk2ff]
+  timeout: 60
+
+variants:
+  base:
+    expect: {m5_q0: proven, m5_q1: proven}
+  logic:
+    params: {LOGIC: 1}
+    expect: {m5_q0: proven, m5_q1: proven}
+  grouped:
+    params: {LOGIC: 1}
+    options: {m5_group: true, m5_prove_engine: aiger rIC3,
+              m5_cover_engine: smtbmc boolector, m5_cover_depth: 80}
+    expect: {m5_group_b: proven}

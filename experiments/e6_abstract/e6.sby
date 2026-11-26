@@ -1,0 +1,38 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# E6: free register value under multiclock.
+# none - pass; cutpoint - fail (value changes between edges); abstract - pass.
+[tasks]
+none
+cutpoint
+abstract
+cover_abs
+
+[options]
+none: mode prove
+cutpoint: mode prove
+cutpoint: expect fail
+abstract: mode prove
+cover_abs: mode cover
+cover_abs: depth 10
+multiclock on
+
+[engines]
+none: abc pdr
+cutpoint: abc pdr
+abstract: abc pdr
+cover_abs: smtbmc
+
+[script]
+read_slang flop.sv --top flop
+read_verilog -formal chk.v
+hierarchy -top chk
+proc
+flatten
+cutpoint: cutpoint w:u.x
+abstract: abstract -state w:u.x
+cover_abs: abstract -state w:u.x
+opt_clean
+
+[files]
+flop.sv
+chk.v

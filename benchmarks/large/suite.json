@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "large-cdc-v1",
+  "cases": [
+    {"id": "cdc_array/small", "config": "benchmarks/synthetic/ofcdc.yaml", "variant": "small", "faults": []},
+    {"id": "cdc_array/base", "config": "benchmarks/synthetic/ofcdc.yaml", "variant": "base", "faults": []},
+    {"id": "cdc_array/large", "config": "benchmarks/synthetic/ofcdc.yaml", "variant": "large", "faults": []},
+    {"id": "cdc_array/binary", "config": "benchmarks/synthetic/ofcdc.yaml", "variant": "binary", "faults": ["ARRAY-BINARY"]},
+    {"id": "cdc_array/missing_stage", "config": "benchmarks/synthetic/ofcdc.yaml", "variant": "missing_stage", "faults": ["ARRAY-MISSING-STAGE"]},
+    {"id": "riscv_dmi/base", "config": "benchmarks/real_ip/riscv_dmi/ofcdc.yaml", "variant": "base", "faults": []},
+    {"id": "axi_spi/base", "config": "benchmarks/real_ip/axi_spi/ofcdc.yaml", "variant": "base", "faults": []}
+  ]
+}

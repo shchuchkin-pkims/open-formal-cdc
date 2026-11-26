@@ -1,0 +1,371 @@
+{
+  "creator": "Yosys 0.71+50 (git sha1 583f380c6, Release, Clang /usr/bin/clang++ 21.1.8)",
+  "modules": {
+    "gray_sync": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "../rtl/gray_sync.sv:39.8"
+      },
+      "ports": {
+        "clk_a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_a_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "inc": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "clk_b": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "rst_b_n": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "ptr_b": {
+          "direction": "output",
+          "bits": [ 7, 8, 9, 10 ]
+        }
+      },
+      "cells": {
+        "$0": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "../rtl/gray_sync.sv:12.25-12.60"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 11, 12, 13, 14 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 15, 16, 17, 18 ]
+          }
+        },
+        "$1": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "../rtl/gray_sync.sv:12.19-12.66"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 11, 12, 13, 14 ],
+            "B": [ 15, 16, 17, 18 ],
+            "S": [ 4 ],
+            "Y": [ 19, 20, 21, 22 ]
+          }
+        },
+        "$7": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "../rtl/gray_sync.sv:19.38-19.60"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 19, 20, 21, 22 ],
+            "B": [ 20, 21, 22, "0" ],
+            "Y": [ 23, 24, 25, 26 ]
+          }
+        },
+        "$driver$u_sync.q": {
+          "hide_name": 1,
+          "type": "$aldff",
+          "parameters": {
+            "ALOAD_POLARITY": "00000000000000000000000000000000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "../rtl/gray_sync.sv:29.3"
+          },
+          "port_directions": {
+            "AD": "input",
+            "ALOAD": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "AD": [ "0", "0", "0", "0" ],
+            "ALOAD": [ 6 ],
+            "CLK": [ 5 ],
+            "D": [ 27, 28, 29, 30 ],
+            "Q": [ 7, 8, 9, 10 ]
+          }
+        },
+        "$driver$u_sync.s1": {
+          "hide_name": 1,
+          "type": "$aldff",
+          "parameters": {
+            "ALOAD_POLARITY": "00000000000000000000000000000000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "../rtl/gray_sync.sv:29.3"
+          },
+          "port_directions": {
+            "AD": "input",
+            "ALOAD": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "AD": [ "0", "0", "0", "0" ],
+            "ALOAD": [ 6 ],
+            "CLK": [ 5 ],
+            "D": [ 31, 32, 33, 34 ],
+            "Q": [ 27, 28, 29, 30 ]
+          }
+        },
+        "$driver$u_tx.bin": {
+          "hide_name": 1,
+          "type": "$aldff",
+          "parameters": {
+            "ALOAD_POLARITY": "00000000000000000000000000000000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "../rtl/gray_sync.sv:13.3"
+          },
+          "port_directions": {
+            "AD": "input",
+            "ALOAD": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "AD": [ "0", "0", "0", "0" ],
+            "ALOAD": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 19, 20, 21, 22 ],
+            "Q": [ 11, 12, 13, 14 ]
+          }
+        },
+        "$driver$u_tx.ptr": {
+          "hide_name": 1,
+          "type": "$aldff",
+          "parameters": {
+            "ALOAD_POLARITY": "00000000000000000000000000000000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "../rtl/gray_sync.sv:13.3"
+          },
+          "port_directions": {
+            "AD": "input",
+            "ALOAD": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "AD": [ "0", "0", "0", "0" ],
+            "ALOAD": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 23, 24, 25, 26 ],
+            "Q": [ 31, 32, 33, 34 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0y": {
+          "hide_name": 1,
+          "bits": [ 15, 16, 17, 18 ],
+          "attributes": {
+          }
+        },
+        "$7y": {
+          "hide_name": 1,
+          "bits": [ 23, 24, 25, 26 ],
+          "attributes": {
+          }
+        },
+        "clk_a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "clk_a",
+            "src": "../rtl/gray_sync.sv:40.24"
+          }
+        },
+        "clk_b": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "clk_b",
+            "src": "../rtl/gray_sync.sv:41.24"
+          }
+        },
+        "inc": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "inc",
+            "src": "../rtl/gray_sync.sv:40.40"
+          }
+        },
+        "ptr_a": {
+          "hide_name": 0,
+          "bits": [ 31, 32, 33, 34 ],
+          "attributes": {
+            "hdlname": "ptr_a",
+            "src": "../rtl/gray_sync.sv:44.17"
+          }
+        },
+        "ptr_b": {
+          "hide_name": 0,
+          "bits": [ 7, 8, 9, 10 ],
+          "attributes": {
+            "hdlname": "ptr_b",
+            "src": "../rtl/gray_sync.sv:42.24"
+          }
+        },
+        "rst_a_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "rst_a_n",
+            "src": "../rtl/gray_sync.sv:40.31"
+          }
+        },
+        "rst_b_n": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "rst_b_n",
+            "src": "../rtl/gray_sync.sv:41.31"
+          }
+        },
+        "u_sync.clk": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "u_sync clk",
+            "src": "../rtl/gray_sync.sv:24.24"
+          }
+        },
+        "u_sync.d": {
+          "hide_name": 0,
+          "bits": [ 31, 32, 33, 34 ],
+          "attributes": {
+            "hdlname": "u_sync d",
+            "src": "../rtl/gray_sync.sv:25.24"
+          }
+        },
+        "u_sync.q": {
+          "hide_name": 0,
+          "bits": [ 7, 8, 9, 10 ],
+          "attributes": {
+            "hdlname": "u_sync q",
+            "src": "../rtl/gray_sync.sv:26.24"
+          }
+        },
+        "u_sync.rst_n": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "u_sync rst_n",
+            "src": "../rtl/gray_sync.sv:24.29"
+          }
+        },
+        "u_sync.s1": {
+          "hide_name": 0,
+          "bits": [ 27, 28, 29, 30 ],
+          "attributes": {
+            "hdlname": "u_sync s1",
+            "src": "../rtl/gray_sync.sv:28.17"
+          }
+        },
+        "u_tx.bin": {
+          "hide_name": 0,
+          "bits": [ 11, 12, 13, 14 ],
+          "attributes": {
+            "hdlname": "u_tx bin",
+            "src": "../rtl/gray_sync.sv:11.17"
+          }
+        },
+        "u_tx.bin_nx": {
+          "hide_name": 0,
+          "bits": [ 19, 20, 21, 22 ],
+          "attributes": {
+            "hdlname": "u_tx bin_nx",
+            "src": "../rtl/gray_sync.sv:11.22"
+          }
+        },
+        "u_tx.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "u_tx clk",
+            "src": "../rtl/gray_sync.sv:8.24"
+          }
+        },
+        "u_tx.inc": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "u_tx inc",
+            "src": "../rtl/gray_sync.sv:8.36"
+          }
+        },
+        "u_tx.ptr": {
+          "hide_name": 0,
+          "bits": [ 31, 32, 33, 34 ],
+          "attributes": {
+            "hdlname": "u_tx ptr",
+            "src": "../rtl/gray_sync.sv:9.24"
+          }
+        },
+        "u_tx.rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "u_tx rst_n",
+            "src": "../rtl/gray_sync.sv:8.29"
+          }
+        }
+      }
+    }
+  }
+}

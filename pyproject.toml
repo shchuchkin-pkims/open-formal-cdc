@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-formal-cdc"
+version = "0.0.1"
+description = "Formal verification of clock domain crossings (CDC/RDC) with Yosys and SymbiYosys"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12"
+dependencies = ["pyyaml>=6"]
+keywords = ["clock domain crossing", "formal verification", "SymbiYosys", "Yosys", "CDC", "RDC"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+open-formal-cdc = "open_formal_cdc.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.package-data]
+open_formal_cdc = ["lib/*.v"]

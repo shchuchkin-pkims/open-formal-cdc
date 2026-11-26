@@ -1,0 +1,13 @@
++incdir+../../cache/common_cells/include
++define+VERILATOR
+../../cache/tech_cells_generic/src/rtl/tc_sync.sv
+../../cache/tech_cells_generic/src/rtl/tc_clk.sv
+../../cache/common_cells/src/sync.sv
+../../cache/common_cells/src/cdc_reset_ctrlr_pkg.sv
+../../cache/common_cells/src/cdc_4phase.sv
+../../cache/common_cells/src/cdc_reset_ctrlr.sv
+../../cache/common_cells/src/cdc_2phase_clearable.sv
+../../cache/riscv-dbg/src/dm_pkg.sv
+../../cache/riscv-dbg/src/dmi_cdc.sv
+../../cache/riscv-dbg/src/dmi_jtag_tap.sv
+../../cache/riscv-dbg/src/dmi_jtag.sv

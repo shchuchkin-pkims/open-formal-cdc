@@ -1,0 +1,245 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "gray_sync/binary",
+  "tool": "jasper",
+  "faults": [
+    "GRAY-BINARY"
+  ],
+  "parameters": {
+    "MODE": 1
+  },
+  "status": "completed",
+  "seconds": 4.972392861000117,
+  "source_sha256": "aeb49567378eaa9c5779eeb34b96cac24bd727377239910abbb50fb444bbe815",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_u_sync.q_bus_gray_coded",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_sync.q_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Functional",
+            "Check": "bus_gray_coded",
+            "TAG": "CDC_PC_FUNC_BUSGRAY",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_sync.q",
+            "Scheme Property": "CDC_u_sync.q_bus_gray_coded",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_sync",
+            "Module": "sync2:(W=4)"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_sync.q",
+            "Scheme Property": "CDC_u_sync.q_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_sync",
+            "Module": "sync2:(W=4)"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.922487897001702,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__binary/run_1/jasper/run.tcl -proj project",
+      "run": 1
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_u_sync.q_bus_gray_coded",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_sync.q_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Functional",
+            "Check": "bus_gray_coded",
+            "TAG": "CDC_PC_FUNC_BUSGRAY",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_sync.q",
+            "Scheme Property": "CDC_u_sync.q_bus_gray_coded",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_sync",
+            "Module": "sync2:(W=4)"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_sync.q",
+            "Scheme Property": "CDC_u_sync.q_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_sync",
+            "Module": "sync2:(W=4)"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 5.021221065999271,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__binary/run_2/jasper/run.tcl -proj project",
+      "run": 2
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_u_sync.q_bus_gray_coded",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_u_sync.q_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Functional",
+            "Check": "bus_gray_coded",
+            "TAG": "CDC_PC_FUNC_BUSGRAY",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_sync.q",
+            "Scheme Property": "CDC_u_sync.q_bus_gray_coded",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_sync",
+            "Module": "sync2:(W=4)"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "u_sync.q",
+            "Scheme Property": "CDC_u_sync.q_data_stable",
+            "Scheme Type": "NDFF_BUS",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "u_sync",
+            "Module": "sync2:(W=4)"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 4.972392861000117,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__binary/run_3/jasper/run.tcl -proj project",
+      "run": 3
+    }
+  ]
+}

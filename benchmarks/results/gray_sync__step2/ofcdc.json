@@ -1,0 +1,287 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "gray_sync/step2",
+  "tool": "ofcdc",
+  "faults": [
+    "GRAY-STEP2"
+  ],
+  "parameters": {
+    "MODE": 2
+  },
+  "status": "completed",
+  "seconds": 0.5259270520000427,
+  "source_sha256": "cef2f056f8d694c2291ac38706f1ff1d10f2f32bfb3167d61128a82fbec274b7",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/gray_sync/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "step2",
+            "check": "gray_u_tx_ptr",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_1/ofcdc/step2/jobs/gray_u_tx_ptr/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_u_tx_ptr.p_gray",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_1/ofcdc/step2/jobs/gray_u_tx_ptr/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_u_tx_ptr.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "step2",
+            "check": "meta_u_tx_ptr",
+            "kind": "check",
+            "template": "nonew",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_1/ofcdc/step2/jobs/meta_u_tx_ptr/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_meta_u_tx_ptr.p_nonew",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_1/ofcdc/step2/jobs/meta_u_tx_ptr/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_meta_u_tx_ptr.p_nonew",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "step2",
+            "crossing": "u_tx.ptr->u_sync.s1",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_u_tx_ptr",
+              "counterexample in meta_u_tx_ptr"
+            ],
+            "relies_on": [],
+            "expect": "unsafe",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.5177830739994533,
+      "status": "completed",
+      "run": 1
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/gray_sync/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "step2",
+            "check": "gray_u_tx_ptr",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_2/ofcdc/step2/jobs/gray_u_tx_ptr/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_u_tx_ptr.p_gray",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_2/ofcdc/step2/jobs/gray_u_tx_ptr/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_u_tx_ptr.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "step2",
+            "check": "meta_u_tx_ptr",
+            "kind": "check",
+            "template": "nonew",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_2/ofcdc/step2/jobs/meta_u_tx_ptr/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_meta_u_tx_ptr.p_nonew",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_2/ofcdc/step2/jobs/meta_u_tx_ptr/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_meta_u_tx_ptr.p_nonew",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "step2",
+            "crossing": "u_tx.ptr->u_sync.s1",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_u_tx_ptr",
+              "counterexample in meta_u_tx_ptr"
+            ],
+            "relies_on": [],
+            "expect": "unsafe",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.5267491019985755,
+      "status": "completed",
+      "run": 2
+    },
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/examples/gray_sync/ofcdc.yaml",
+        "time_models": [
+          "ticks",
+          "clk2ff"
+        ],
+        "results": [
+          {
+            "variant": "step2",
+            "check": "gray_u_tx_ptr",
+            "kind": "check",
+            "template": "gray",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_3/ofcdc/step2/jobs/gray_u_tx_ptr/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_u_tx_ptr.p_gray",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_3/ofcdc/step2/jobs/gray_u_tx_ptr/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_gray_u_tx_ptr.p_gray",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "step2",
+            "check": "meta_u_tx_ptr",
+            "kind": "check",
+            "template": "nonew",
+            "status": "cex",
+            "expect": "cex",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 7,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_3/ofcdc/step2/jobs/meta_u_tx_ptr/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_meta_u_tx_ptr.p_nonew",
+                "seconds": 0
+              },
+              {
+                "model": "clk2ff",
+                "status": "cex",
+                "step": 8,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/build/gray_sync__step2/run_3/ofcdc/step2/jobs/meta_u_tx_ptr/job_clk2ff_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_meta_u_tx_ptr.p_nonew",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "step2",
+            "crossing": "u_tx.ptr->u_sync.s1",
+            "scheme": "ndff_bus",
+            "verdict": "unsafe",
+            "reasons": [
+              "counterexample in gray_u_tx_ptr",
+              "counterexample in meta_u_tx_ptr"
+            ],
+            "relies_on": [],
+            "expect": "unsafe",
+            "ok": true
+          }
+        ],
+        "returncode": 0,
+        "tool_version": "0.0.1"
+      },
+      "seconds": 0.5259270520000427,
+      "status": "completed",
+      "run": 3
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Clock-domain crossing hazards checked by Open Formal CDC</title>
+  <desc id="desc">Data paths between clock domain A and clock domain B: an unsynchronized path, combinational logic before a synchronizer, and a two-flop synchronized bus.</desc>
+  <defs>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#dc2626"/></marker>
+    <marker id="arrow-amber" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#d97706"/></marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#059669"/></marker>
+    <style>
+      .title { font: 700 26px Inter, 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px Inter, 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .domain { font: 700 19px Inter, 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .clock { font: 500 15px 'SFMono-Regular', Consolas, monospace; fill: #475569; }
+      .label { font: 600 15px Inter, 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .small { font: 500 13px Inter, 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .cell { font: 700 13px Inter, 'Segoe UI', Arial, sans-serif; fill: #0f172a; text-anchor: middle; }
+      .footer { font: 500 15px Inter, 'Segoe UI', Arial, sans-serif; fill: #334155; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="420" rx="18" fill="#f8fafc"/>
+  <text x="40" y="43" class="title">Clock-domain crossings need more than a structural warning</text>
+  <text x="40" y="71" class="subtitle">Open Formal CDC converts crossing structures into proofs or VCD counterexamples.</text>
+
+  <rect x="40" y="100" width="250" height="240" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <rect x="910" y="100" width="250" height="240" rx="14" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="2"/>
+  <text x="65" y="132" class="domain">Clock domain A</text>
+  <text x="65" y="157" class="clock">clk_a / rst_a</text>
+  <text x="65" y="320" class="small">Source registers and inputs</text>
+  <text x="935" y="132" class="domain">Clock domain B</text>
+  <text x="935" y="157" class="clock">clk_b / rst_b</text>
+  <text x="935" y="320" class="small">Destination registers</text>
+
+  <path d="M90 188 h18 v-10 h18 v10 h18 v-10 h18 v10 h18 v-10 h18 v10 h18" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <path d="M960 188 h18 v-10 h18 v10 h18 v-10 h18 v10 h18 v-10 h18 v10 h18" fill="none" stroke="#7c3aed" stroke-width="2"/>
+
+  <text x="600" y="166" class="label" text-anchor="middle">Unsynchronized crossing</text>
+  <line x1="290" y1="185" x2="900" y2="185" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <circle cx="600" cy="185" r="14" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <path d="M594 179 l12 12 M606 179 l-12 12" stroke="#dc2626" stroke-width="2.5"/>
+
+  <text x="600" y="219" class="label" text-anchor="middle">Glitch or incoherent multi-bit capture</text>
+  <line x1="290" y1="242" x2="430" y2="242" stroke="#d97706" stroke-width="3"/>
+  <rect x="430" y="224" width="174" height="36" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+  <text x="517" y="247" class="cell">Combinational logic</text>
+  <line x1="604" y1="242" x2="700" y2="242" stroke="#d97706" stroke-width="3"/>
+  <rect x="700" y="224" width="62" height="36" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="731" y="247" class="cell">FF 1</text>
+  <line x1="762" y1="242" x2="790" y2="242" stroke="#d97706" stroke-width="3"/>
+  <rect x="790" y="224" width="62" height="36" rx="6" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+  <text x="821" y="247" class="cell">FF 2</text>
+  <line x1="852" y1="242" x2="900" y2="242" stroke="#d97706" stroke-width="3" marker-end="url(#arrow-amber)"/>
+
+  <text x="600" y="283" class="label" text-anchor="middle">Checked synchronization scheme</text>
+  <line x1="290" y1="302" x2="580" y2="302" stroke="#059669" stroke-width="3"/>
+  <rect x="580" y="284" width="62" height="36" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="611" y="307" class="cell">FF 1</text>
+  <line x1="642" y1="302" x2="680" y2="302" stroke="#059669" stroke-width="3"/>
+  <rect x="680" y="284" width="62" height="36" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="711" y="307" class="cell">FF 2</text>
+  <line x1="742" y1="302" x2="900" y2="302" stroke="#059669" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <text x="810" y="291" class="small" text-anchor="middle">Gray / handshake / FIFO</text>
+
+  <line x1="330" y1="366" x2="870" y2="366" stroke="#cbd5e1"/>
+  <text x="600" y="396" class="footer">Formal checks cover data stability, pulse width, ordering, reset behavior and metastability.</text>
+</svg>

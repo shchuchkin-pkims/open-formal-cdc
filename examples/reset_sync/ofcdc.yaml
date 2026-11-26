@@ -1,0 +1,32 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Reset synchronizer: asynchronous assertion and synchronous staged deassertion.
+design:
+  top: reset_sync
+  files: [reset_sync.sv]
+  params: {BAD: 0}
+
+clocks:
+  - {name: a, port: clk}
+resets:
+  - {port: rst_n, active: low, clock: a}
+
+checks:
+  - name: stages
+    template: reset_sync
+    signal: sync_stages
+    reset: rst_n
+    clock: a
+
+options:
+  structural: false
+  time_models: [ticks, clk2ff]
+
+variants:
+  base:
+    expect: {stages: proven}
+  fast_release:
+    params: {BAD: 1}
+    expect: {stages: cex}
+  no_async:
+    params: {BAD: 2}
+    expect: {stages: cex}

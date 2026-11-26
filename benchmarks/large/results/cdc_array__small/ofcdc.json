@@ -1,0 +1,314 @@
+{
+  "schema": 1,
+  "suite": "large-cdc-v1",
+  "case": "cdc_array/small",
+  "tool": "ofcdc",
+  "faults": [],
+  "status": "completed",
+  "seconds": 1.0555168989994854,
+  "source_sha256": "0fc2bcce2dc7fd4665e2c7e93377a9291b9a818bda89d8b9abe45115060835e5",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "tool": "open-formal-cdc",
+        "version": "0.0.1",
+        "config": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/synthetic/ofcdc.yaml",
+        "time_models": [
+          "ticks"
+        ],
+        "results": [
+          {
+            "variant": "small",
+            "check": "glitch_flag_sync1_0",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "small",
+            "check": "conv_flag_b",
+            "kind": "check",
+            "template": "onechange",
+            "status": "cex",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "cex",
+                "step": 5,
+                "trace": "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__small/ofcdc/small/jobs/conv_flag_b/job_ticks_prove/engine_0/trace.vcd",
+                "detail": "failed ofcdc_top.chk_conv_flag_b.p_onechange; change together: ptr_a[15:8] (1 bit), ptr_a[23:16] (1 bit), ptr_a[31:24] (1 bit), ptr_a[7:0] (1 bit)",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "small",
+            "check": "glitch_flag_sync1_1",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "small",
+            "check": "glitch_flag_sync1_2",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "small",
+            "check": "glitch_flag_sync1_3",
+            "kind": "check",
+            "template": "onechange",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "small",
+            "check": "gray_ptr_a_15_8",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "small",
+            "check": "gray_ptr_a_23_16",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "small",
+            "check": "gray_ptr_a_31_24",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": null,
+            "ok": null,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          },
+          {
+            "variant": "small",
+            "check": "gray_ptr_a_7_0",
+            "kind": "check",
+            "template": "gray",
+            "status": "proven",
+            "expect": "proven",
+            "ok": true,
+            "assumes": [],
+            "models": [
+              {
+                "model": "ticks",
+                "status": "proven",
+                "step": null,
+                "trace": null,
+                "detail": "",
+                "seconds": 0
+              }
+            ]
+          }
+        ],
+        "crossings": [
+          {
+            "variant": "small",
+            "crossing": "ptr_a[7:0]->flag_sync1[0]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "small",
+            "crossing": "ptr_a[15:8]->flag_sync1[1]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "small",
+            "crossing": "ptr_a[23:16]->flag_sync1[2]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "small",
+            "crossing": "ptr_a[31:24]->flag_sync1[3]",
+            "scheme": "ndff",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "small",
+            "crossing": "ptr_a[15:8]->sync1[15:8]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "small",
+            "crossing": "ptr_a[23:16]->sync1[23:16]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "small",
+            "crossing": "ptr_a[31:24]->sync1[31:24]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          },
+          {
+            "variant": "small",
+            "crossing": "ptr_a[7:0]->sync1[7:0]",
+            "scheme": "ndff_bus",
+            "verdict": "unresolved",
+            "reasons": [
+              "convergence: the sources may change in one step (conv_flag_b); review"
+            ],
+            "relies_on": [],
+            "expect": null,
+            "ok": null
+          }
+        ],
+        "tool_version": "0.0.1",
+        "returncode": 0
+      },
+      "seconds": 1.0555168989994854,
+      "status": "completed",
+      "mismatches": 0,
+      "sources": [
+        "/home/user/Documents/VS-Code/Claude/open-formal-cdc/build/benchmark_v2_src/benchmarks/large/build/cdc_array__small/rtl/cdc_array.sv"
+      ],
+      "run": 1
+    }
+  ]
+}

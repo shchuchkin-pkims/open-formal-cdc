@@ -1,0 +1,1014 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "cases": [
+    {
+      "case": "gray_sync/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 1.0791552549999324,
+          "faults": []
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.880591089000518,
+          "faults": []
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "gray_sync/binary",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.5350273620024382,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "gray_u_tx_ptr:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "GRAY-BINARY",
+              "claim": "property"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.972392861000117,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "CDC_u_sync.q_bus_gray_coded:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "GRAY-BINARY",
+              "claim": "property"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "gray_sync/step2",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.5259270520000427,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "gray_u_tx_ptr:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "GRAY-STEP2",
+              "claim": "property"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.9280396530011785,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "CDC_u_sync.q_bus_gray_coded:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "GRAY-STEP2",
+              "claim": "property"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "handshake_mux/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.9929610889994365,
+          "faults": []
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.928958471999067,
+          "faults": []
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "handshake_mux/data_changes",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.5275132919996395,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "en_u_tx_data__u_rx_data_out:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "HS-DATA",
+              "claim": "property"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.930543586000567,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "CDC_u_rx.data_out_datapath_stable:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "HS-DATA",
+              "claim": "property"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "async_fifo/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 18.52489671499643,
+          "faults": []
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 5.630534904001252,
+          "faults": []
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "async_fifo/binary",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 11.32211738299884,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "gray_wptr:cex",
+                "gray_rptr:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "FIFO-BINARY",
+              "claim": "property"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 5.624024110999017,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "CDC_u_wsync.q_bus_gray_coded:cex",
+                "CDC_u_rsync.q_bus_gray_coded:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "FIFO-BINARY",
+              "claim": "property"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "async_fifo/overflow",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.7131936449986824,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "fifo:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "FIFO-OVERFLOW",
+              "claim": "functional"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 5.581365792997531,
+          "faults": [
+            {
+              "detected": false,
+              "evidence": [],
+              "reason": "",
+              "run_detections": [
+                false,
+                false,
+                false
+              ],
+              "baseline_evidence": [],
+              "id": "FIFO-OVERFLOW",
+              "claim": "functional"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "async_fifo/read_reset",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.7712625000021944,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "fifo:cex",
+                "gray_rptr:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "FIFO-RESET",
+              "claim": "functional"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 5.631264694999118,
+          "faults": [
+            {
+              "detected": false,
+              "evidence": [],
+              "reason": "",
+              "run_detections": [
+                false,
+                false,
+                false
+              ],
+              "baseline_evidence": [],
+              "id": "FIFO-RESET",
+              "claim": "functional"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "pulse_sync/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.45006217199988896,
+          "faults": []
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.879743268000311,
+          "faults": []
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "pulse_sync/short",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.49666424799943343,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "pulse_lvl__u_sync_s1:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "PULSE-SHORT",
+              "claim": "property"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.87834735800061,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "CDC_u_sync.q_data_stable:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "PULSE-SHORT",
+              "claim": "property"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "glitch_conv/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.5243743639985041,
+          "faults": []
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.927964988997701,
+          "faults": []
+        }
+      },
+      "m4_ablation": {
+        "onechange": "proven",
+        "nohazard": "cex",
+        "reading": "hazard_candidate"
+      },
+      "commercial_glitch": {
+        "jasper": [
+          "CDC_u_and.q_data_stable:cex"
+        ]
+      },
+      "m4_ablation_runs": [
+        {
+          "onechange": "proven",
+          "nohazard": "cex",
+          "reading": "hazard_candidate"
+        },
+        {
+          "onechange": "proven",
+          "nohazard": "cex",
+          "reading": "hazard_candidate"
+        },
+        {
+          "onechange": "proven",
+          "nohazard": "cex",
+          "reading": "hazard_candidate"
+        }
+      ]
+    },
+    {
+      "case": "glitch_conv/binary",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.5420921989971248,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "glitch_u_and_s1:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "GLITCH-COMBO",
+              "claim": "sufficient_condition"
+            },
+            {
+              "detected": true,
+              "evidence": [
+                "conv_st_b:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "CONV-RECONVERGE",
+              "claim": "sufficient_condition"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.927070313002332,
+          "faults": [
+            {
+              "detected": false,
+              "evidence": [
+                "CDC_u_and.q_data_stable:cex"
+              ],
+              "reason": "signature also fires on the known-good control",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [
+                "CDC_u_and.q_data_stable:cex"
+              ],
+              "id": "GLITCH-COMBO",
+              "claim": "sufficient_condition"
+            },
+            {
+              "detected": false,
+              "evidence": [],
+              "reason": "",
+              "run_detections": [
+                false,
+                false,
+                false
+              ],
+              "baseline_evidence": [],
+              "id": "CONV-RECONVERGE",
+              "claim": "sufficient_condition"
+            }
+          ]
+        }
+      },
+      "m4_ablation": {
+        "onechange": "cex",
+        "nohazard": "cex",
+        "reading": "hazard_candidate"
+      },
+      "commercial_glitch": {
+        "jasper": [
+          "CDC_u_and.q_data_stable:cex"
+        ]
+      },
+      "m4_ablation_runs": [
+        {
+          "onechange": "cex",
+          "nohazard": "cex",
+          "reading": "hazard_candidate"
+        },
+        {
+          "onechange": "cex",
+          "nohazard": "cex",
+          "reading": "hazard_candidate"
+        },
+        {
+          "onechange": "cex",
+          "nohazard": "cex",
+          "reading": "hazard_candidate"
+        }
+      ]
+    },
+    {
+      "case": "glitch_conv/paired",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.47754958500081557,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "conv_st_b:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "CONV-PAIRED",
+              "claim": "sufficient_condition"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.9290241390008305,
+          "faults": [
+            {
+              "detected": false,
+              "evidence": [],
+              "reason": "",
+              "run_detections": [
+                false,
+                false,
+                false
+              ],
+              "baseline_evidence": [],
+              "id": "CONV-PAIRED",
+              "claim": "sufficient_condition"
+            }
+          ]
+        }
+      },
+      "m4_ablation": {
+        "onechange": "cex",
+        "nohazard": "proven",
+        "reading": "discharged"
+      },
+      "commercial_glitch": {
+        "jasper": [
+          "CDC_u_and.q_data_stable:cex"
+        ]
+      },
+      "m4_ablation_runs": [
+        {
+          "onechange": "cex",
+          "nohazard": "proven",
+          "reading": "discharged"
+        },
+        {
+          "onechange": "cex",
+          "nohazard": "proven",
+          "reading": "discharged"
+        },
+        {
+          "onechange": "cex",
+          "nohazard": "proven",
+          "reading": "discharged"
+        }
+      ]
+    },
+    {
+      "case": "m5_heldout/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.6883806420009932,
+          "faults": []
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 5.021531364000111,
+          "faults": []
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "m5_heldout/twin",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.8442400019994238,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "m5_conv_joined:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "M5-RECONVERGE-TWIN",
+              "claim": "functional"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 5.2723646689992165,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "violation:reconvergence_check"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "M5-RECONVERGE-TWIN",
+              "claim": "functional"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "m5_heldout/triple",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 1.2065919189990382,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "m5_conv_joined:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "M5-RECONVERGE-TRIPLE",
+              "claim": "functional"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 5.322009659001196,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "violation:reconvergence_check"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "M5-RECONVERGE-TRIPLE",
+              "claim": "functional"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "static_cfg/base",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.3140251709992299,
+          "faults": []
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.579742859001271,
+          "faults": []
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "static_cfg/internal_update",
+      "tools": {
+        "ofcdc": {
+          "status": "completed",
+          "seconds": 0.47696452899981523,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "cfg_static:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "STATIC-UPDATE",
+              "claim": "property"
+            }
+          ]
+        },
+        "jasper": {
+          "status": "completed",
+          "seconds": 4.88022968900259,
+          "faults": [
+            {
+              "detected": true,
+              "evidence": [
+                "cfg_cdc_static:cex"
+              ],
+              "reason": "",
+              "run_detections": [
+                true,
+                true,
+                true
+              ],
+              "baseline_evidence": [],
+              "id": "STATIC-UPDATE",
+              "claim": "property"
+            }
+          ]
+        }
+      },
+      "m4_ablation": null,
+      "commercial_glitch": {},
+      "m4_ablation_runs": [
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "totals": {
+    "ofcdc": {
+      "detected": 13,
+      "known": 13,
+      "seconds": 41.012999123991904,
+      "unscored": 0
+    },
+    "jasper": {
+      "detected": 8,
+      "known": 13,
+      "seconds": 96.72574347100453,
+      "unscored": 0
+    }
+  },
+  "designs": {
+    "gray_sync": {
+      "ofcdc": {
+        "detected": 2,
+        "known": 2,
+        "seconds": 2.1401096690024133,
+        "unscored": 0
+      },
+      "jasper": {
+        "detected": 2,
+        "known": 2,
+        "seconds": 14.781023603001813,
+        "unscored": 0
+      }
+    },
+    "handshake_mux": {
+      "ofcdc": {
+        "detected": 1,
+        "known": 1,
+        "seconds": 1.520474380999076,
+        "unscored": 0
+      },
+      "jasper": {
+        "detected": 1,
+        "known": 1,
+        "seconds": 9.859502057999634,
+        "unscored": 0
+      }
+    },
+    "async_fifo": {
+      "ofcdc": {
+        "detected": 3,
+        "known": 3,
+        "seconds": 31.331470242996147,
+        "unscored": 0
+      },
+      "jasper": {
+        "detected": 1,
+        "known": 3,
+        "seconds": 22.467189502996916,
+        "unscored": 0
+      }
+    },
+    "pulse_sync": {
+      "ofcdc": {
+        "detected": 1,
+        "known": 1,
+        "seconds": 0.9467264199993224,
+        "unscored": 0
+      },
+      "jasper": {
+        "detected": 1,
+        "known": 1,
+        "seconds": 9.758090626000921,
+        "unscored": 0
+      }
+    },
+    "glitch_conv": {
+      "ofcdc": {
+        "detected": 3,
+        "known": 3,
+        "seconds": 1.5440161479964445,
+        "unscored": 0
+      },
+      "jasper": {
+        "detected": 0,
+        "known": 3,
+        "seconds": 14.784059441000863,
+        "unscored": 0
+      }
+    },
+    "m5_heldout": {
+      "ofcdc": {
+        "detected": 2,
+        "known": 2,
+        "seconds": 2.7392125629994553,
+        "unscored": 0
+      },
+      "jasper": {
+        "detected": 2,
+        "known": 2,
+        "seconds": 15.615905692000524,
+        "unscored": 0
+      }
+    },
+    "static_cfg": {
+      "ofcdc": {
+        "detected": 1,
+        "known": 1,
+        "seconds": 0.7909896999990451,
+        "unscored": 0
+      },
+      "jasper": {
+        "detected": 1,
+        "known": 1,
+        "seconds": 9.459972548003861,
+        "unscored": 0
+      }
+    }
+  },
+  "m4_ablation": {
+    "hazard_candidate": 2,
+    "discharged": 1
+  },
+  "missing": []
+}

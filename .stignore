@@ -1,0 +1,12 @@
+// open-formal-cdc: sync everything except git, build output, SBY results and local environments.
+(?d).git
+(?d)build
+(?d)__pycache__
+(?d)*.pyc
+(?d).pytest_cache
+(?d).claude
+(?d)venv
+(?d).venv
+(?d)*.egg-info
+(?d).syncthing.*
+(?d)cache

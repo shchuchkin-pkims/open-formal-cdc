@@ -1,0 +1,39 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# M4 function hazard with source registers in two different clock domains.
+design:
+  top: async_hazard
+  files: [async_hazard.sv]
+  params: {BIN: 0}
+
+clocks:
+  - {name: a, port: clk_a}
+  - {name: b, port: clk_b}
+  - {name: c, port: clk_c}
+resets:
+  - {port: rst_a_n, active: low, clock: a}
+  - {port: rst_b_n, active: low, clock: b}
+  - {port: rst_c_n, active: low, clock: c}
+inputs:
+  - {port: step_a, clock: a}
+  - {port: step_b, clock: b}
+
+checks:
+  - name: hazard_and
+    template: nohazard
+    d: u_and.d
+    inputs: [st0, st1]
+    clock: c
+
+options:
+  structural: false
+  time_models: [ticks, clk2ff]
+
+variants:
+  base:
+    expect: {hazard_and: cex}
+  binary:
+    params: {BIN: 1}
+    expect: {hazard_and: cex}
+  paired:
+    params: {BIN: 2}
+    expect: {hazard_and: cex}

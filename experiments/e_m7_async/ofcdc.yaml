@@ -1,0 +1,46 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# M7 asynchronous input skew: no invented destination values.
+design:
+  top: gray_sync
+  files: [../../examples/gray_sync/gray_sync.sv]
+  params: {MODE: 0}
+
+clocks:
+  - {name: a, port: clk_a, period: 10}
+  - {name: b, port: clk_b, period: 5}
+resets:
+  - {port: rst_a_n, active: low, clock: a}
+  - {port: rst_b_n, active: low, clock: b}
+inputs:
+  - {port: inc, clock: a}
+
+checks:
+  - name: nonew_plain
+    template: nonew
+    src: u_tx.ptr
+    dst: u_sync.q
+    clocks: [a, b]
+    expect: proven
+  - name: nonew_async
+    template: async_nonew
+    src: u_tx.ptr
+    dst: u_sync.q
+    clock: b
+    skew:
+      - {cell: $driver$u_sync.s1, d: u_sync.d, width: 4}
+
+options:
+  structural: false
+  clock_ratio: periods
+  time_models: [ticks, clk2ff]
+  timeout: 60
+
+variants:
+  base:
+    expect: {nonew_plain: proven, nonew_async: proven}
+  binary:
+    params: {MODE: 1}
+    expect: {nonew_plain: proven, nonew_async: cex}
+  step2:
+    params: {MODE: 2}
+    expect: {nonew_plain: proven, nonew_async: cex}

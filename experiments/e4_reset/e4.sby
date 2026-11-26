@@ -1,0 +1,61 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# E4: tick time model with an asynchronous source reset at an arbitrary moment.
+# common - reset only at start (pass); free - reset of A at any time: the synchronized
+# pointer in B overtakes the cleared pointer of A (fail). Same expectation for both models.
+
+[tasks]
+clk_common
+clk_free
+clk_cover
+tick_common
+tick_free
+tick_cover
+
+[options]
+clk_common: mode prove
+clk_common: multiclock on
+clk_free: mode prove
+clk_free: expect fail
+clk_free: multiclock on
+clk_cover: mode cover
+clk_cover: depth 40
+clk_cover: multiclock on
+tick_common: mode prove
+tick_free: mode prove
+tick_free: expect fail
+tick_cover: mode cover
+tick_cover: depth 40
+
+[engines]
+clk_common: abc pdr
+clk_free: abc pdr
+clk_cover: smtbmc
+tick_common: abc pdr
+tick_free: abc pdr
+tick_cover: smtbmc
+
+[script]
+read_slang dut_gray.sv --top dut -G BAD=0
+script prep.ys
+clk_common: read_verilog -formal ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+clk_free: read_verilog -formal -DFREE_RST ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+clk_cover: read_verilog -formal -DFREE_RST ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+tick_common: read_verilog -formal -DTICKS ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+tick_free: read_verilog -formal -DTICKS -DFREE_RST ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+tick_cover: read_verilog -formal -DTICKS -DFREE_RST ofcdc_msi_d.v ofcdc_nooverrun.v wrap.v
+hierarchy -top ofcdc_wrap
+proc
+flatten
+setundef -anyseq t:$buf
+opt_clean
+tick_common: formalff -declockgate
+tick_free: formalff -declockgate
+tick_cover: formalff -declockgate
+opt_clean
+
+[files]
+../common/dut_gray.sv
+../common/ofcdc_msi_d.v
+ofcdc_nooverrun.v
+wrap.v
+prep.ys

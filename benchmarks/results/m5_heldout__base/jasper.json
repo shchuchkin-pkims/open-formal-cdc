@@ -1,0 +1,400 @@
+{
+  "schema": 1,
+  "suite": "directed-cdc-v2",
+  "case": "m5_heldout/base",
+  "tool": "jasper",
+  "faults": [],
+  "parameters": {
+    "CHAINS": 2,
+    "RECONV": 0
+  },
+  "status": "completed",
+  "seconds": 5.021531364000111,
+  "source_sha256": "304f004ea16ea2255a0f158371d8536c00bfba73e782883995777eafc7f6ee3f",
+  "host": "user-pc",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "runs": [
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_a2_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_b2_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_c2_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_fanout",
+            "TAG": "CDC_ST_SYNC_PAIRFANOUT",
+            "Severity": "Warning",
+            "Rule Value": "False",
+            "Design Value": "",
+            "# Pairs": "3",
+            "Reset Sources": "src_q",
+            "Source Unit": "src_q",
+            "Destination Unit": "a1 c1 b1",
+            "Occurrence": "src_q",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_clk_a",
+            "Destination Domain": "jg_clk_b",
+            "Source Clock": "clk_a",
+            "Destination Clock": "clk_b",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "a2",
+            "Scheme Property": "CDC_a2_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "b2",
+            "Scheme Property": "CDC_b2_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "c2",
+            "Scheme Property": "CDC_c2_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 5.021531364000111,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/build/m5_heldout__base/run_1/jasper/run.tcl -proj project",
+      "run": 1
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_a2_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_b2_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_c2_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_fanout",
+            "TAG": "CDC_ST_SYNC_PAIRFANOUT",
+            "Severity": "Warning",
+            "Rule Value": "False",
+            "Design Value": "",
+            "# Pairs": "3",
+            "Reset Sources": "src_q",
+            "Source Unit": "src_q",
+            "Destination Unit": "a1 c1 b1",
+            "Occurrence": "src_q",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_clk_a",
+            "Destination Domain": "jg_clk_b",
+            "Source Clock": "clk_a",
+            "Destination Clock": "clk_b",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "a2",
+            "Scheme Property": "CDC_a2_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "b2",
+            "Scheme Property": "CDC_b2_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "c2",
+            "Scheme Property": "CDC_c2_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 5.021297145001881,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/build/m5_heldout__base/run_2/jasper/run.tcl -proj project",
+      "run": 2
+    },
+    {
+      "raw": {
+        "returncode": 0,
+        "properties": [
+          {
+            "name": "CDC_a2_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_b2_data_stable",
+            "status": "cex"
+          },
+          {
+            "name": "CDC_c2_data_stable",
+            "status": "cex"
+          }
+        ],
+        "violations": [
+          {
+            "Violation Type": "Pair",
+            "Check": "cdc_pair_fanout",
+            "TAG": "CDC_ST_SYNC_PAIRFANOUT",
+            "Severity": "Warning",
+            "Rule Value": "False",
+            "Design Value": "",
+            "# Pairs": "3",
+            "Reset Sources": "src_q",
+            "Source Unit": "src_q",
+            "Destination Unit": "a1 c1 b1",
+            "Occurrence": "src_q",
+            "Scheme Property": "",
+            "Scheme Type": "",
+            "Detection Type": "",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "jg_clk_a",
+            "Destination Domain": "jg_clk_b",
+            "Source Clock": "clk_a",
+            "Destination Clock": "clk_b",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "a2",
+            "Scheme Property": "CDC_a2_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "b2",
+            "Scheme Property": "CDC_b2_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          },
+          {
+            "Violation Type": "Functional",
+            "Check": "data_stable",
+            "TAG": "CDC_PC_FUNC_CTRLSTABLE",
+            "Severity": "Error",
+            "Rule Value": "",
+            "Design Value": "",
+            "# Pairs": "0",
+            "Reset Sources": "",
+            "Source Unit": "",
+            "Destination Unit": "",
+            "Occurrence": "c2",
+            "Scheme Property": "CDC_c2_data_stable",
+            "Scheme Type": "NDFF",
+            "Detection Type": "Automatic",
+            "Source Reset": "",
+            "Destination Reset": "",
+            "Source Domain": "",
+            "Destination Domain": "",
+            "Source Clock": "",
+            "Destination Clock": "",
+            "Instance": "shared_reconvergence",
+            "Module": "shared_reconvergence"
+          }
+        ],
+        "errors": [
+          "[<embedded>] % check_cdc -check -severity {fatal {no_scheme}}",
+          "[<embedded>] % check_cdc -check -severity {error {cdc_pair_logic sync_chain_logic}}",
+          "                  - error                     : 0 (0%)",
+          "                  - error                     : 0"
+        ]
+      },
+      "seconds": 5.021991640998749,
+      "status": "completed",
+      "command": "type module >/dev/null 2>&1 || source /etc/profile.d/lmod.sh; export MODULEPATH=/opt/modulefiles${MODULEPATH:+:$MODULEPATH}; module load cadence/JasperGold/2019.06; jg -cdc -batch /home/user/Documents/VS-Code/Claude/open-formal-cdc/benchmarks/build/m5_heldout__base/run_3/jasper/run.tcl -proj project",
+      "run": 3
+    }
+  ]
+}

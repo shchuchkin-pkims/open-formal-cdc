@@ -1,0 +1,51 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Example: asynchronous FIFO. Pointer crossings are found automatically (ndff_bus with a
+# Gray check); the FIFO protocol check (T-FIFO) is declared on the FIFO interface.
+design:
+  top: async_fifo
+  files: [async_fifo.sv]
+  params: {BUG: 0}
+
+clocks:
+  - {name: w, port: wclk}
+  - {name: r, port: rclk}
+resets:
+  - {port: wrst_n, active: low, clock: w}
+  - {port: rrst_n, active: low, clock: r}
+inputs:
+  - {port: winc, clock: w}
+  - {port: wdata, clock: w}
+  - {port: rinc, clock: r}
+
+checks:
+  - name: fifo
+    template: fifo
+    wr_clock: w
+    wr_en: winc
+    wr_full: wfull
+    wr_data: wdata
+    rd_clock: r
+    rd_en: rinc
+    rd_empty: rempty
+    rd_data: rdata
+    depth: 4
+    read_latency: 0
+    expect: proven
+
+options:
+  time_models: [ticks, clk2ff]
+
+variants:
+  base:
+    expect: {gray_wptr: proven, gray_rptr: proven, "wptr->u_rsync.s1": safe, "rptr->u_wsync.s1": safe}
+  binary:
+    params: {BUG: 1}
+    expect: {gray_wptr: cex, gray_rptr: cex, fifo: proven, "wptr->u_rsync.s1": unsafe, "rptr->u_wsync.s1": unsafe}
+  overflow:
+    params: {BUG: 2}
+    expect: {fifo: cex}
+  read_reset:                 # the read side is reset during operation, the write side is not
+    resets: {rrst_n: {mode: free}}
+    # the FIFO loses or repeats words, and the read pointer jumps to zero: several bits
+    # change at once, so the Gray crossing back to the write side is broken too
+    expect: {fifo: cex, gray_rptr: cex, "rptr->u_wsync.s1": unsafe}

@@ -1,0 +1,15 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Common design preparation: expose nets and cut the D input of the first synchronizer stage.
+hierarchy -top dut
+proc
+flatten
+opt_clean
+cd dut
+rename -output u_tx.bin ofcdc_s1
+rename -wire -suffix _ofcdc_ff w:u_sync.s1 %ci1 c:* %i
+select -list c:*_ofcdc_ff
+add -output ofcdc_mo0 4
+add -input ofcdc_mi0 4
+connect -set ofcdc_mo0 u_sync.d
+connect -port u_sync.s1_ofcdc_ff D ofcdc_mi0
+cd ..
