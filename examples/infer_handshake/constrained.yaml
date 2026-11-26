@@ -1,0 +1,37 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# The two inferred protocol rules, checked together in both time models.
+design:
+  top: infer_handshake
+  files: [infer_handshake.sv]
+  sdc: constraints.sdc
+clocks:
+  - {name: a, port: clk}
+resets:
+  - {port: rst_n, active: low, clock: a}
+inputs:
+  - {port: req, clock: a}
+assumptions:
+  - name: hold_high_pending
+    kind: protocol
+    protocol: and_next
+    clock: a
+    antecedent:
+      - {signal: ack, positive: false}
+      - {signal: req, positive: true}
+    consequent: {signal: req, positive: true}
+    verify: false
+  - name: hold_low_pending
+    kind: protocol
+    protocol: and_next
+    clock: a
+    antecedent:
+      - {signal: ack, positive: true}
+      - {signal: req, positive: false}
+    consequent: {signal: req, positive: false}
+    verify: false
+checks:
+  - {name: request_protocol, template: hs_req, req: req, ack: ack, clock: a, expect: proven}
+options:
+  structural: false
+  time_models: [ticks, clk2ff]
+  timeout: 60

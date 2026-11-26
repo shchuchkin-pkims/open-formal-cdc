@@ -70,4 +70,4 @@ def need(params: dict[str, Any], key: str, check: str) -> Any:
     return params[key]
 
 
-from . import async_nonew, clock_mux, en_stable, env, fifo, gray, handshake, hazard, meta, onechange, pulse, rdc_capture, reset_latency, reset_release, reset_sync, reset_value, rise_latency, settled  # noqa: E402,F401  template registration
+from . import async_nonew, clock_mux, en_stable, env, fifo, gray, handshake, hazard, horizon, meta, onechange, pulse, rdc_capture, reset_latency, reset_release, reset_sync, reset_value, rise_latency, settled  # noqa: E402,F401  template registration

@@ -351,3 +351,41 @@ def test_nohazard_job_keeps_cone_script_with_assumption(tmp_path):
     assert ".ofcdc_s0(hz_h_f)" in w and ".hz_h_in0(hz_h_in0)" in w
     assert "c_skew: cover (f != d);" in (tmp_path / "j" / "ofcdc_nohazard.v").read_text()
     assert job.instance.covers == ["chk_h.c_change", "chk_h.c_skew"]
+
+
+def test_protocol_assumption_job(tmp_path):
+    from open_formal_cdc.infer import Candidate, Literal
+    candidate = Candidate("and_next", (Literal("q[0]", False), Literal("go", False)),
+                          Literal("go", False))
+    params = {**candidate.params("a"), "mode": "assert"}
+    job = make(tmp_path, {"name": "p", "template": "env_protocol", **params})
+    w = (tmp_path / "job" / "wrapper_ticks.v").read_text()
+    assert "ofcdc_env_protocol #(.T(4), .ASSERT(1)) env_p" in w
+    assert ".a1(!ofcdc_out_q[0]), .a2(!ofcdc_in_go), .a3(!ofcdc_in_go)" in w
+    assert job.instance.asserts == ["env_p.g_assert.p_env"]
+    assert job.instance.covers == ["env_p.g_assert.c_env_act"]
+
+
+def test_trace_block_job(tmp_path):
+    make(tmp_path, {"name": "b", "template": "env_trace_block", "mode": "assume",
+                    "steps": [{"go": 0, "async_in": 1}, {"go": 1, "async_in": 1}]})
+    w = (tmp_path / "job" / "wrapper_ticks.v").read_text()
+    assert "wire block_b_0 = ofcdc_in_async_in && !ofcdc_in_go;" in w
+    assert "block_b_matched[0] <= !block_b_started && block_b_0;" in w
+    assert "block_b_matched[1] <= block_b_matched[0] && block_b_1;" in w
+    assert "assume (!(block_b_matched[0] && block_b_1));" in w
+    make(tmp_path, {"name": "single", "template": "env_trace_block", "mode": "assume",
+                    "steps": [{"go": 1}]})
+    w = (tmp_path / "job" / "wrapper_ticks.v").read_text()
+    assert "assume (!(block_single_matched[0] && block_single_0));" in w
+
+
+def test_vacuity_and_horizon_jobs(tmp_path):
+    job = make(tmp_path, {"name": "g", "template": "gray", "signal": "go", "clock": "a",
+                          "vacuity": [{"signal": "go", "clock": "a"}]})
+    w = (tmp_path / "job" / "wrapper_ticks.v").read_text()
+    assert "c_vacuity0: cover (ofcdc_in_go != ofcdc_vacuity_prev0);" in w
+    assert "c_vacuity0" in job.instance.covers
+    make(tmp_path, {"name": "h", "template": "horizon", "depth": 8})
+    w = (tmp_path / "job" / "wrapper_ticks.v").read_text()
+    assert "c_horizon: cover (horizon_h == 7);" in w

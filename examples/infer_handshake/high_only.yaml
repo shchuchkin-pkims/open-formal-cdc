@@ -1,0 +1,28 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Second inference round after the user accepts the high-pending rule.
+design:
+  top: infer_handshake
+  files: [infer_handshake.sv]
+  sdc: constraints.sdc
+clocks:
+  - {name: a, port: clk}
+resets:
+  - {port: rst_n, active: low, clock: a}
+inputs:
+  - {port: req, clock: a}
+assumptions:
+  - name: hold_high_pending
+    kind: protocol
+    protocol: and_next
+    clock: a
+    antecedent:
+      - {signal: ack, positive: false}
+      - {signal: req, positive: true}
+    consequent: {signal: req, positive: true}
+    verify: false
+checks:
+  - {name: request_protocol, template: hs_req, req: req, ack: ack, clock: a, expect: cex}
+options:
+  structural: false
+  time_models: [ticks]
+  timeout: 60

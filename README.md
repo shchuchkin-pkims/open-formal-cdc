@@ -22,7 +22,7 @@ It is designed for open-source ASIC/FPGA verification flows, CDC research, and r
 - **Pulse, glitch, divergence, and reconvergence risks**, including combinational logic before a synchronizer.
 - **Selected metastability and reset-domain failures**, using an explicit old-or-new-value metastability model.
 
-Formal checks can run in two independent time models: a compact tick-based model and `clk2fflogic`. YAML/SDC assumptions constrain clocks, resets, and inputs; internal assumptions can have formal checker twins.
+Formal checks can run in two independent time models: a compact tick-based model and `clk2fflogic`. YAML/SDC assumptions constrain clocks, resets, and inputs; internal assumptions can have formal checker twins. For under-constrained properties, `open-formal-cdc infer` mines protocol assumptions from multiple counterexamples and applies Plassan's eight filters. It currently supports `en_stable`, `gray`, and `hs_req`; inferred assumptions are reported for user review, never accepted automatically.
 
 ## How it works
 
@@ -130,7 +130,7 @@ See the [full large-design results](benchmarks/large/results/summary.md) and [ex
 
 ## Project status
 
-Open Formal CDC is an actively developed research prototype. The implemented examples currently pass **104 unit tests and 24 end-to-end Yosys/SymbiYosys tests**, including automatic M5 proposals for direct, logic-between-stages, fanout, sliced-vector, shared-source reconvergent, declared user-cell, and attributed packed-vector chains, plus M6 reset-release and M7 asynchronous-skew models in both time models. The external RDC-001 regression passes **9/9** cases, RDC-002 passes **7/7**, RDC-003 passes **8/8**, RDC-004 passes **6/6**, RDC-005 passes **8/8**, RDC-006 passes **6/6**, RDC-007 passes **9/9**, RDC-008 passes **10/10**, RDC-010 passes **28/28**, RDC-011 passes **10/10**, and RDC-009 passes **10/10** cases in both time models. The T-CLKMUX regression passes **4/4** cases, including an AND/OR glitch-free design whose `clock_select` protocol is inferred structurally. The next milestones are Plassan assumption generation, richer reports, and adapters for other CDC tools.
+Open Formal CDC is an actively developed research prototype. The implemented examples currently pass **119 unit tests and 27 end-to-end Yosys/SymbiYosys tests**, including automatic M5 proposals for direct, logic-between-stages, fanout, sliced-vector, shared-source reconvergent, declared user-cell, and attributed packed-vector chains, plus M6 reset-release and M7 asynchronous-skew models in both time models. The external RDC-001 regression passes **9/9** cases, RDC-002 passes **7/7**, RDC-003 passes **8/8**, RDC-004 passes **6/6**, RDC-005 passes **8/8**, RDC-006 passes **6/6**, RDC-007 passes **9/9**, RDC-008 passes **10/10**, RDC-010 passes **28/28**, RDC-011 passes **10/10**, and RDC-009 passes **10/10** cases in both time models. The T-CLKMUX regression passes **4/4** cases, including an AND/OR glitch-free design whose `clock_select` protocol is inferred structurally. Two user-guided inference rounds recover both request/acknowledge protocol rules, and the joint proof passes in both time models. The next milestones are counterexample justification, stuttering generalization, GenBuf validation, richer reports, and adapters for other CDC tools.
 
 ```bash
 .venv/bin/pip install -e '.[dev]'

@@ -466,6 +466,24 @@ def build_job(cfg: Config, design: Design, nl: Netlist, check: Check, src_files:
         files = inst.lib_files + ([] if "ofcdc_msi_reset.v" in inst.lib_files else ["ofcdc_msi_reset.v"])
         inst = templates.Instance(files, "\n".join(verilog), inst.asserts, covers, inst.notes,
                                   script=inst.script)
+    vacuity = list(check.params.get("vacuity") or [])
+    if vacuity:
+        verilog = [inst.verilog]
+        covers = list(inst.covers)
+        for k, m in enumerate(vacuity):
+            sig, width = ctx.signal(str(m["signal"]))
+            clock = str(m["clock"])
+            clk = ctx.clock(clock)
+            act = ctx.act(clock)
+            prev = f"ofcdc_vacuity_prev{k}"
+            valid = f"ofcdc_vacuity_valid{k}"
+            verilog += [f"  reg {_bits(width)}{prev};",
+                        f"  reg {valid} = 1'b0;",
+                        f"  always @(posedge {clk}) begin {prev} <= {sig}; {valid} <= {act}; end",
+                        f"  always @(*) if ({act} && {valid}) c_vacuity{k}: cover ({sig} != {prev});"]
+            covers.append(f"c_vacuity{k}")
+        inst = templates.Instance(inst.lib_files, "\n".join(verilog), inst.asserts, covers, inst.notes,
+                                  script=inst.script)
     job_dir.mkdir(parents=True, exist_ok=True)
     for old in job_dir.glob("wrapper_*.v"):
         old.unlink()

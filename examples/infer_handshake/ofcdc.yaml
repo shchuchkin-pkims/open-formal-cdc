@@ -1,0 +1,18 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Infer the two environment rules needed by the request/acknowledge protocol.
+design:
+  top: infer_handshake
+  files: [infer_handshake.sv]
+  sdc: constraints.sdc
+clocks:
+  - {name: a, port: clk}
+resets:
+  - {port: rst_n, active: low, clock: a}
+inputs:
+  - {port: req, clock: a}
+checks:
+  - {name: request_protocol, template: hs_req, req: req, ack: ack, clock: a, expect: cex}
+options:
+  structural: false
+  time_models: [ticks]
+  timeout: 60

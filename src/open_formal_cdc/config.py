@@ -19,7 +19,8 @@ import yaml
 TIME_MODELS = ("ticks", "clk2ff")
 EXPECT_VALUES = ("proven", "cex", "vacuous")
 VERDICTS = ("safe", "safe_assuming", "unsafe", "no_scheme", "structural", "unresolved", "note", "warning")
-ASSUMPTION_KINDS = ("constant", "static", "hamming1", "onehot0", "quasi_static", "clock_select")
+ASSUMPTION_KINDS = ("constant", "static", "hamming1", "onehot0", "quasi_static", "clock_select", "protocol",
+                    "trace_block")
 SCHEMES = ("none", "ndff", "ndff_bus", "gray_bus", "mux_enable", "handshake", "pulse_toggle",
            "async_fifo", "reset_sync", "reset_domain", "clock_mux", "static", "user_cell", "external_sync")
 
@@ -71,7 +72,7 @@ class Assumption:
     applies_to); if it constrains an internal design net it is also verified by a
     twin job where it is asserted."""
     name: str
-    kind: str                  # constant | static | hamming1 | onehot0
+    kind: str                  # environment or inferred protocol assumption
     params: dict[str, Any]
     applies_to: list[str] | None = None   # check names; None means all checks
     expect: str | None = None  # expected outcome of the twin job

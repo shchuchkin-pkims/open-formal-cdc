@@ -46,6 +46,16 @@ def main(argv: list[str] | None = None) -> int:
     b.add_argument("-j", "--parallel", type=int, default=8)
     b.add_argument("--check", action="append", help="run only this check (repeatable)")
     b.add_argument("--models", help="comma-separated time models: ticks,clk2ff")
+    i = sub.add_parser("infer", help="infer and formally filter environment assumptions")
+    i.add_argument("config", type=Path)
+    i.add_argument("-o", "--out", type=Path)
+    i.add_argument("-x", "--executor", default=os.environ.get("OFCDC_EXECUTOR", "local"))
+    i.add_argument("-j", "--parallel", type=int, default=8)
+    i.add_argument("--check", action="append", required=True, help="check to analyze (exactly one)")
+    i.add_argument("--models", help="comma-separated time models: ticks,clk2ff")
+    i.add_argument("--max-limit", type=int, default=10, help="maximum distinct counterexamples")
+    i.add_argument("--common-threshold", type=float, default=1.0,
+                   help="fraction of counterexamples that must contain a candidate")
     a = sub.add_parser("analyze", help="structural analysis only: crossings and proposed checks")
     a.add_argument("config", type=Path)
     a.add_argument("-o", "--out", type=Path)
@@ -68,6 +78,21 @@ def main(argv: list[str] | None = None) -> int:
         if args.models:
             cfg.options.time_models = [m.strip() for m in args.models.split(",") if m.strip()]
         out = args.out or (cfg.path.parent / "build" / cfg.path.stem)
+        if args.cmd == "infer":
+            from .inference import infer
+            reports = infer(cfg, out, make_executor(args.executor), args.parallel, args.check,
+                            max_limit=args.max_limit, common_threshold=args.common_threshold,
+                            log=lambda s: print(s, file=sys.stderr))
+            for report in reports:
+                candidates = [c for c in report["candidates"]
+                              if c["status"] == "candidate" and c["quality"]]
+                candidates.sort(key=lambda c: -(c["quality"] or 0))
+                for candidate in candidates:
+                    quality = "?" if candidate["quality"] is None else f"{candidate['quality']:.3f}"
+                    print(f"{report['variant']}/{report['check']}: mu={quality} {candidate['expression']}")
+            print(f"\nAssumptions: {out.resolve() / 'assumptions.yaml'}")
+            print(f"Details:     {out.resolve() / 'assumptions.json'}")
+            return 0
         if args.cmd == "cegar":
             from .cegar import cegar
             reports = cegar(cfg, out, make_executor(args.executor), args.parallel, args.check,
