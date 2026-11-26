@@ -137,7 +137,7 @@ Known-good не даёт находки. RDC-001 и RDC-009 продолжают
   --executor ssh:user@host:key
 ```
 
-Результат: **4/4**. Static-select good доказан благодаря допущению `static`; async-select bad даёт контрпример. AND/OR glitch-free good доказан с `safe_assuming` благодаря явному `clock_select`: `sel_d` инициализируется нулём и не меняется, пока `on` не подтвердит выбор `sel`. Runt bad имеет контрпример при том же допущении. Для protocol-случаев `reset_steps=30`, `sel_d` асинхронен, доказательство выполняется rIC3. Модуль `ofcdc_clock_leg` ограничивает длительность фаз входных тактов тем же `min_steps`, что и выходной монитор. Эталонный `formal/clock_switch.sv` проходит и с исходным assertion, и с нашим `ofcdc_clock_mux`. Структурный анализ пока автоматически распознаёт только простые `$mux` на входах CLK; AND/OR схема задаётся явной проверкой с протоколом.
+Результат: **4/4**. Static-select good доказан благодаря допущению `static`; async-select bad даёт контрпример. AND/OR glitch-free good доказан с `safe_assuming`: структурный анализ сам выводит `clock_select` по двум enable, общему `sel` и вектору `on`. Runt bad имеет контрпример. Для protocol-случаев `reset_steps=30`, `sel_d` асинхронен, доказательство выполняется rIC3. Модуль `ofcdc_clock_leg` ограничивает длительность фаз входных тактов тем же `min_steps`, что и выходной монитор. Эталонный `formal/clock_switch.sv` проходит и с исходным assertion, и с нашим `ofcdc_clock_mux`. Структурный анализ распознаёт простые `$mux` и AND/OR glitch-free форму с двумя цепями синхронизации select и подтверждением выключения другой ноги.
 
 ## Ещё не проверено
 - rtl-buddy-cdc (`tests/fixtures`, BSD-3, 226 пар) и clockguard (`designs/`, MIT, 27 проектов) – другая разметка ответов, нужны свои сопоставления правил.

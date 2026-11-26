@@ -2,6 +2,7 @@
 # Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
 """Clock ratios, T-PULSE, variant options, latches and synchronizer cells."""
 
+import json
 from pathlib import Path
 
 import pytest
@@ -10,6 +11,8 @@ from open_formal_cdc.config import ConfigError, Clock, Input, parse_config, vari
 from open_formal_cdc.jobs import build_job, ratio_bounds
 from open_formal_cdc.netlist import Netlist
 from open_formal_cdc.structural import Graph, analyze
+
+DATA = Path(__file__).parent / "data"
 
 
 def test_ratio_bounds():
@@ -279,6 +282,34 @@ def test_clock_mux_proposal():
     assert check.params == {"signal": "gclk", "min_steps": 2, "clocks": ["a", "b"]}
     assert crossings[0].scheme == "clock_mux" and crossings[0].assumptions == ["static_mode"]
     assert [(a.name, a.kind, a.params["signal"]) for a in assumptions] == [("static_mode", "static", "mode")]
+
+
+def test_andor_clock_mux_protocol():
+    from open_formal_cdc.structural import to_config
+    g = Graph.from_json(json.loads((DATA / "clock_mux_andor.json").read_text()), "good_glitch_free_mux")
+    st = analyze(g, [Clock("clk0", "clk0"), Clock("clk1", "clk1"), Clock("cs", "cs")],
+                 [Input("sel_d", "cs")], {"rst0", "rst1"})
+    (mux,) = st.clock_muxes
+    assert mux.protocol == "andor" and mux.select_d == "sel_d"
+    assert mux.on == "on" and mux.on0 == 1 and mux.on1 == 2
+    crossings, checks, assumptions = to_config(st, {"clk0", "clk1", "cs"}, clock_mux_checks=True)
+    (assumption,) = assumptions
+    assert assumption.kind == "clock_select" and assumption.params["verify"] is False
+    assert assumption.params["select_d"] == "sel_d" and assumption.params["select"] == "sel"
+    assert assumption.params["on"] == "on" and assumption.params["on0"] == 1 and assumption.params["on1"] == 2
+    clock_crossing = next(x for x in crossings if x.scheme == "clock_mux")
+    assert clock_crossing.assumptions == [assumption.name]
+    assert checks[0].template == "clock_mux"
+
+
+def test_plain_mux_has_no_andor_protocol():
+    from open_formal_cdc.structural import to_config
+    g = Graph.from_json(json.loads((DATA / "clock_mux_runt.json").read_text()), "cdc010_leg_synced_select_runt")
+    st = analyze(g, [Clock("clk0", "clk0"), Clock("clk1", "clk1"), Clock("cs", "cs")],
+                 [Input("sel_d", "cs")], {"rst0", "rst1"})
+    assert st.clock_muxes[0].protocol is None
+    _, _, assumptions = to_config(st, {"clk0", "clk1", "cs"}, clock_mux_checks=True)
+    assert not assumptions
 
 
 def test_reset_polarity_declaration():

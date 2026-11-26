@@ -168,6 +168,11 @@ class ClockMux:
     cell: str | None = None
     line: int | None = None
     select_static: bool = False
+    select_d: str | None = None
+    on: str | None = None
+    on0: int = 0
+    on1: int = 0
+    protocol: str | None = None
 
 
 @dataclass
@@ -1097,8 +1102,103 @@ class Analyzer:
                                              producer_reset[0], producer_reset[1], value, c.line))
         return out
 
+    def _clock_root(self, bit: Bit) -> str | None:
+        for kind, name in self._root(bit):
+            if kind == "port" and name in self.clock_of_port:
+                return name
+        return None
+
+    def _ff_path_exists(self, src: Bit, dst: Bit, max_depth: int = 4) -> bool:
+        seen: set[tuple[Bit, int]] = set()
+
+        def visit(bit: Bit, depth: int) -> bool:
+            if bit == src:
+                return True
+            if depth >= max_depth or (bit, depth) in seen:
+                return False
+            seen.add((bit, depth))
+            d = self.g.driver.get(bit)
+            if d is None or d.kind != "cell":
+                return False
+            c = self.g.cells[d.name]
+            if c.is_ff:
+                bits = c.conns.get("D", [])
+                return bool(bits) and visit(bits[d.index], depth + 1)
+            return any(visit(ib, depth) for _, _, ib in c.inputs())
+
+        return visit(dst, 0)
+
+    @staticmethod
+    def _reset_active_low(name: str) -> bool:
+        n = str(name).lower()
+        return n in ("rst", "rst0", "rst1", "reset") or n.endswith(("_n", "_b", "rstn"))
+
+    def _reset_mux_value(self, enable: Bit) -> str | None:
+        d = self.g.driver.get(enable)
+        if d is None:
+            return None
+        cell = self.g.cells[d.name]
+        if not cell.is_ff:
+            return None
+        dnet = cell.conns["D"][d.index]
+        mux = self.g.drv_cell(dnet)
+        if mux is None or mux.type not in ("$mux", "$_MUX_"):
+            return None
+        select = self.g.bit_name(mux.conns["S"][0])
+        if select not in self.reset_ports or not self._reset_active_low(select):
+            return None
+        return mux.conns["B"][self.g.driver[dnet].index]
+
+    def _andor_clock_mux(self, output_cell: Cell) -> ClockMux | None:
+        legs = []
+        for bit in output_cell.conns["A"] + output_cell.conns["B"]:
+            cell = self.g.drv_cell(bit)
+            if cell is None or cell.type not in ("$logic_and", "$_AND_"):
+                return None
+            ca, cb = self._clock_root(cell.conns["A"][0]), self._clock_root(cell.conns["B"][0])
+            if bool(ca) == bool(cb):
+                return None
+            clock = ca or cb
+            enable = cell.conns["B"][0] if ca else cell.conns["A"][0]
+            legs.append((clock, enable))
+        if len(legs) != 2 or legs[0][0] == legs[1][0] or legs[0][1] == legs[1][1]:
+            return None
+        enables = [en for _, en in legs]
+        common = []
+        for c in self.g.ffs():
+            for bit in c.conns.get("Q", []):
+                if bit not in enables and all(self._ff_path_exists(bit, en) for en in enables):
+                    common.append(bit)
+        if len(common) != 1:
+            return None
+        select = common[0]
+        if any(not self._ff_path_exists(enables[i], enables[1 - i]) for i in (0, 1)):
+            return None
+        select_cell_name = self.g.driver[select].name
+        select_d = self.g.cells[select_cell_name].conns["D"][self.g.driver[select].index]
+        if self.g.driver.get(select_d) is None or self.g.driver[select_d].kind != "port":
+            return None
+        on = next((name for name, (direction, bits) in self.g.ports.items()
+                   if direction == "output" and set(bits) == set(enables)), None)
+        if on is None:
+            return None
+        reset_values = [self._reset_mux_value(en) for en in enables]
+        if set(reset_values) != {"0", "1"}:
+            return None
+        on0 = 1 if reset_values[0] == "1" else 2
+        output = self.g.vector_name(output_cell.conns["Y"]) or self.g.bit_name(output_cell.conns["Y"][0])
+        return ClockMux(f"{self.g.bit_name(select)}->{output}", output, self.g.bit_name(select),
+                        sorted({clk for clk, _ in legs}), output_cell.name, output_cell.line,
+                        select_d=self.g.bit_name(select_d), on=on, on0=on0, on1=3 - on0,
+                        protocol="andor")
+
     def _clock_muxes(self) -> list[ClockMux]:
         out = []
+        for c in self.g.cells.values():
+            if c.type in ("$logic_or", "$_OR_"):
+                mux = self._andor_clock_mux(c)
+                if mux:
+                    out.append(mux)
         for c in self.g.cells.values():
             if c.type not in ("$mux", "$_MUX_"):
                 continue
@@ -1654,6 +1754,12 @@ def to_config(s: Structure, clock_names: set[str], pulse_checks: bool = False,
             if m.select_static:
                 an = f"static_{sanitize(m.select)}"
                 assumptions.setdefault(an, Assumption(an, "static", {"signal": m.select}))
+                anames.append(an)
+            if m.protocol == "andor":
+                an = f"clock_select_{sanitize(m.select)}"
+                assumptions.setdefault(an, Assumption(an, "clock_select", {
+                    "select_d": m.select_d, "select": m.select, "on": m.on,
+                    "on0": m.on0, "on1": m.on1, "verify": False}))
                 anames.append(an)
             crossings.append(Crossing(m.name, Endpoint(m.select, None), Endpoint(m.output, None),
                                       "clock_mux", [check.name], anames))

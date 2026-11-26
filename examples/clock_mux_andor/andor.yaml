@@ -1,0 +1,28 @@
+# Author: Shchuchkin E. Yu. <shchuchkin-pkims@yandex.ru>
+# Automatic AND/OR glitch-free clock mux recognition and proof.
+design:
+  top: good_glitch_free_mux
+  files: [andor_mux.sv]
+
+clocks:
+  - {name: clk0, port: clk0}
+  - {name: clk1, port: clk1}
+  - {name: cs, port: cs}
+resets:
+  - {port: rst0, active: low}
+  - {port: rst1, active: low}
+inputs:
+  - {port: sel_d, clock: cs}
+
+options:
+  structural: true
+  clock_mux_checks: true
+  time_models: [clk2ff]
+  reset_steps: 30
+  cover_depth: 80
+  prove_engine: aiger rIC3
+  timeout: 120
+
+variants:
+  base:
+    expect: {clock_mux_clk_out: proven, "sel->clk_out": safe_assuming}

@@ -46,15 +46,6 @@ def run_case(c: dict, executor_spec: str, models: list[str]) -> dict:
         "options": {"time_models": models, "timeout": 60, "clock_mux_checks": True},
     }
     if protocol:
-        raw["assumptions"] = [{"name": "select_protocol", "kind": "clock_select",
-                               "select_d": "sel_d", "select": "sel", "on": "on",
-                               "on0": 1, "on1": 2, "verify": False}]
-        raw["checks"] = [{"name": "clock_mux_clk_out", "template": "clock_mux",
-                          "signal": "clk_out", "min_steps": 3, "clocks": ["clk0", "clk1"]}]
-        raw["crossings"] = [{"name": "clock_mux", "from": {"signal": "sel"}, "to": {"signal": "clk_out"},
-                             "scheme": "clock_mux", "checks": ["clock_mux_clk_out"],
-                             "assumptions": ["select_protocol"]}]
-        raw["options"]["structural"] = False
         raw["options"]["reset_steps"] = 30
         raw["options"]["prove_engine"] = "aiger rIC3"
         raw["options"]["timeout"] = 120
